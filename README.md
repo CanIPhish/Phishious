@@ -1,13 +1,23 @@
 ![image](https://user-images.githubusercontent.com/5109530/124600570-33cfe000-deaa-11eb-9ccf-438189f47467.png)
 
 
-Phishious
+What is Phishious?
 =======
 
 [Phishious](https://caniphish.com/Phishious/Walkthrough) is an open-source Secure Email Gateway (SEG) evaluation toolkit designed for red-teamers. It provides the ability to see how various Secure Email Gateway technologies behave when presented with phishing material.
 
 ### Secure Email Gateways Supported
 ![image](https://user-images.githubusercontent.com/5109530/124600797-74c7f480-deaa-11eb-859d-a1126dce732f.png)
+
+### Why use Phishious?
+We're not joking when we say that Phishious is a world first in Secure Email Gateway evaluation. There is currently no other tool available (free or paid) that provides the ability for you as a red-teamer to scan your phish against an array of Secure Email Gateways. The closest utility is VirusTotal however this specifically focuses on Malware detection and not Spam/Phish detection.
+
+Through use of Phishious, you'll be able to test your Phishing material against the world's most popular Secure Email Gateway's prior to delivery. This is an invaluable capability as it provides you an indication of how successful your phishing campaign may be.
+
+### How does Phishious work?
+Phishious exploits a misconfiguration whereby many organisations broadcast overly sensitive information in email bounce responses and non-delivery reports. This comes in the form of the original untampered inbound message headers. By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets quarantine folder or be completely blocked by the SEG. When we scale this up from 1 target to many, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.
+
+To better understand email bounce attacks and the resulting issues, please read the following [Linkedin Article](https://www.linkedin.com/pulse/abusing-exchange-postmaster-bypass-email-spam-malware-sebastian-salla/) or [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
 
 
 
@@ -17,8 +27,7 @@ Windows 10 Endpoint or Windows Server 2012+ with .NET Core 5.0 onwards
 ### Setup
 Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to either use the [CanIPhish hosted Phishious Toolkit](https://caniphish.com/Phishious/Index) or to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
 
-
-### How Phishious works
+### How to use Phishious
 A Phishious scan is comprised of four distinct phases. These phases are outlined in detail below:
 Markup : <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
