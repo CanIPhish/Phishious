@@ -131,3 +131,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
+### Disclaimer
+This tool should be used on applications/networks that you have permission to use. Any misuse or damage caused will be solely the users’ responsibility.
