@@ -98,7 +98,7 @@ Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on W
 
 ### Documentation
 
-Documentation is always a work-in-progress and can be found on the [CanIPhish](https://caniphish.com/Phishious/Walkthrough) website. Find something missing? Let us know by filing an issue!
+Documentation is always a work-in-progress and can be found on the [CanIPhish](https://caniphish.com/Phishious/Walkthrough) website or here on GitHub. Find something missing? Let us know by filing an issue!
 
 
 ### Issues
