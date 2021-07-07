@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\favicon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\assets\images\favicon.ico" />
     <None Include="wwwroot\assets\images\favicon.png" />
     <None Include="wwwroot\assets\images\favicon.svg" />
@@ -352,6 +356,7 @@
     <None Include="wwwroot\assets\vendor\jquery\src\var\support.js" />
     <None Include="wwwroot\assets\vendor\jquery\src\var\toString.js" />
     <None Include="wwwroot\assets\vendor\jquery\src\wrap.js" />
+    <None Include="wwwroot\favicon.svg" />
   </ItemGroup>
 
   <ItemGroup>
