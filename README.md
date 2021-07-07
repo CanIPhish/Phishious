@@ -12,7 +12,7 @@ What is Phishious?
 ### Why use Phishious?
 We're not joking when we say that Phishious is a world first in Secure Email Gateway evaluation. There is currently no other tool available (free or paid) that provides the ability for you as a red-teamer to scan your phish against an array of Secure Email Gateways. The closest utility is VirusTotal however this specifically focuses on Malware detection and not Spam/Phish detection.
 
-Through use of Phishious, you'll be able to freely test your Phishing material against the world's most popular Secure Email Gateway's prior to delivery. This is an invaluable capability as it provides you an indication of how successful your phishing campaign may be.
+Through use of Phishious, you'll be able to freely test your phishing material against the world's most popular Secure Email Gateways. This is an invaluable capability as it provides you an indication of how successful your phishing campaign may be.
 
 ### How does Phishious work?
 Phishious exploits a common misconfiguration where many organisations broadcast overly sensitive information in email bounce responses and non-delivery reports. The sensitive information typically comes in the form of original untampered inbound message headers. 
