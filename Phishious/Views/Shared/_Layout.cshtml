@@ -129,77 +129,10 @@
     <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
     <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JS Implementing Plugins -->
-    <script src="../../assets/vendor/hs-header/dist/hs-header.min.js"></script>
-    <script src="../../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-    <script src="../../assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-    <script src="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
-    <script src="../../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
-    <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-
     <!-- JS Front -->
     <script src="../../assets/js/theme.min.js"></script>
 
     <!-- JS Plugins Init. -->
-    <script>
-        $(document).on('ready', function () {
-            // INITIALIZATION OF HEADER
-            // =======================================================
-            var header = new HSHeader($('#header')).init();
-
-
-            // INITIALIZATION OF MEGA MENU
-            // =======================================================
-            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
-                desktop: {
-                    position: 'left'
-                }
-            }).init();
-
-            // INITIALIZATION OF UNFOLD
-            // =======================================================
-            var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
-
-
-            // INITIALIZATION OF UNFOLD
-            // =======================================================
-            $('.js-hs-search-unfold-invoker').each(function () {
-                var searchUnfold = new HSUnfold($(this), {
-                    afterOpen: function () {
-                        $('#searchSlideDownControl').focus();
-                    }
-                }).init();
-            });
-
-
-            // INITIALIZATION OF FORM VALIDATION
-            // =======================================================
-            $('.js-validate').each(function () {
-                $.HSCore.components.HSValidation.init($(this), {
-                    rules: {
-                        confirmPassword: {
-                            equalTo: '#signupPassword'
-                        }
-                    }
-                });
-            });
-
-
-            // INITIALIZATION OF SHOW ANIMATIONS
-            // =======================================================
-            $('.js-animation-link').each(function () {
-                var showAnimation = new HSShowAnimation($(this)).init();
-            });
-
-
-            // INITIALIZATION OF GO TO
-            // =======================================================
-            $('.js-go-to').each(function () {
-                var goTo = new HSGoTo($(this)).init();
-            });
-        });</script>
-
-    <!-- IE Support -->
-    <script>if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../../assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');</script>
+    
 </body>
 </html>
