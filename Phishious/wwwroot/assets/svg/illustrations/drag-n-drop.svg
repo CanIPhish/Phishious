@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 66.1 58" style="enable-background:new 0 0 66.1 58;" xml:space="preserve">
+<style type="text/css">
+	.drag-n-drop-1{fill:#377DFF;}
+	.drag-n-drop-2{fill:#FFFFFF;}
+</style>
+<g opacity=".5">
+	<circle class="drag-n-drop-1 fill-primary" cx="26.4" cy="43.1" r="0.6"/>
+</g>
+<g opacity=".5">
+	<circle class="drag-n-drop-1 fill-primary" cx="20.3" cy="51.2" r="1.3"/>
+</g>
+<g>
+	<circle class="drag-n-drop-1 fill-primary" cx="22" cy="37.5" r="1.3"/>
+</g>
+<g>
+	<circle class="drag-n-drop-1 fill-primary" cx="31.1" cy="49.5" r="1.3"/>
+</g>
+<g opacity=".3">
+	<circle class="drag-n-drop-1 fill-primary" cx="39.1" cy="43.2" r="0.6"/>
+</g>
+<g opacity=".3">
+	<circle class="drag-n-drop-1 fill-primary" cx="35.1" cy="57.4" r="0.6"/>
+</g>
+<g opacity=".2">
+	<circle class="drag-n-drop-1 fill-primary" cx="33.1" cy="38" r="0.6"/>
+</g>
+<g opacity=".5">
+	<circle class="drag-n-drop-1 fill-primary" cx="42.2" cy="49.4" r="1.3"/>
+</g>
+<g>
+	<circle class="drag-n-drop-1 fill-primary" cx="44.2" cy="37.5" r="1.3"/>
+</g>
+<path class="drag-n-drop-1 fill-primary" opacity=".2" d="M27.8,2.1c-0.4,0.4-2.5,0-5,2.2c-0.7,0.7-1.1,1.5-1.6,2.2c-0.4,0.7-0.7,1.5-0.9,2.1
+	c0,0,0,0-0.1,0c-0.5-0.1-1.2-0.3-1.7-0.3l0,0h-0.1c-4.7,0-8.8,3.3-9.8,7.9H7.6C3.4,16.3,0,19.8,0,24v0.5c0,3.2,1.8,5.8,4.6,7H24
+	L27.8,2.1z"/>
+<path class="drag-n-drop-1 fill-primary" d="M52.4,31.6h7.4c3.4,0,6.3-3.2,6.3-7v-0.5c0-3.8-2.8-7-6.3-7h-0.2
+	c-1.1-4.1-4.5-7.1-8.5-7.1c-1.8,0-3.4,0.5-4.8,1.6C45.3,5,40.4,0,34.2,0c-3.8,0-7.1,1.8-9.3,4.9C24.4,5.5,24,6.2,23.6,7
+	c-0.4,0.8-0.7,1.7-0.9,2.6c-0.7-0.3-1.4-0.4-2.1-0.4c-4.1,0-7.7,3.4-8.3,7.9h-1.4c-3.4,0-6.3,3.2-6.3,7v0.5c0,3.8,2.8,7,6.3,7h34.3"
+	/>
+<g>
+	<path class="drag-n-drop-2 fill-white" d="M27.8,19.6c-0.1-0.1-0.2-0.3-0.2-0.5s0.1-0.4,0.2-0.5l5.8-5.8c0.1-0.1,0.3-0.2,0.5-0.2s0.4,0.1,0.5,0.2
+		l5.8,5.8c0.1,0.1,0.2,0.3,0.2,0.5s-0.1,0.4-0.2,0.5l-0.7,0.7c-0.1,0.2-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2l-3.5-3.6v8.6
+		c0,0.2-0.1,0.4-0.2,0.5C35,25.9,34.8,26,34.6,26h-1c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.5v-8.6l-3.5,3.6
+		c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2L27.8,19.6z"/>
+</g>
+</svg>

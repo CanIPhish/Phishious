@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 451 902" style="enable-background:new 0 0 451 902;" xml:space="preserve">
+<linearGradient id="halfCircle3ID1" gradientUnits="userSpaceOnUse" x1="225.5" y1="0" x2="225.5" y2="902">
+	<stop class="stop-color-primary" offset="1.385225e-07" style="stop-color:#377DFF;stop-opacity:15.000000e-02"/>
+	<stop class="stop-color-white" offset="0.6469" style="stop-color:#FFFFFF;stop-opacity:0"/>
+</linearGradient>
+<path fill="none" stroke="url(#halfCircle3ID1)" stroke-width="164" stroke-miterlimit="10" d="M451,820C247.2,820,82,654.8,82,451S247.2,82,451,82"/>
+</svg>

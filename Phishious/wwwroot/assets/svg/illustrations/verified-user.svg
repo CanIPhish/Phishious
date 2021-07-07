@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 155 152.9" style="enable-background:new 0 0 155 152.9;" xml:space="preserve">
+<style type="text/css">
+	.verified-user-0{fill:#377DFF;stroke:#377DFF;}
+	.verified-user-1{fill:#FFFFFF;}
+	.verified-user-2{fill:#00C9A7;}
+</style>
+<g>
+	<circle class="verified-user-0 fill-primary stroke-primary" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" cx="77.5" cy="76.5" r="75.4"/>
+	<path class="verified-user-1 fill-white" d="M93,105.5c-0.5-5.1-0.3-8.6-0.3-13.2c2.3-1.2,6.4-8.9,7.1-15.3c1.8-0.1,4.6-1.9,5.5-8.8
+		c0.4-3.7-1.3-5.8-2.4-6.5c2.9-8.8,9-36.1-11.3-38.9c-2.1-3.7-7.4-5.5-14.4-5.5c-27.8,0.5-31.2,21-25.1,44.5
+		c-1.1,0.7-2.9,2.8-2.4,6.5c0.8,6.9,3.7,8.7,5.5,8.8c0.7,6.5,5,14.1,7.3,15.3c0,4.6,0.2,8.2-0.3,13.2c-4,10.6-24.3,11.5-36,21.7
+		c12.3,12.4,32.1,21.2,53.1,21.2s45.6-16.6,49.7-21.1C117.3,117,97,116.2,93,105.5z"/>
+</g>
+<g>
+	<path class="verified-user-2 fill-success" d="M155,103.6l-0.1-2l-2-0.2c-7.6-0.8-14.1-3.6-18.3-5.9c-4.5-2.5-7.3-4.8-7.3-4.8l-1.5-1.3l-1.5,1.3
+		c0,0-2.8,2.3-7.3,4.8c-4.1,2.2-10.7,5.1-18.3,5.9l-2,0.2l-0.1,2c0,0.4-0.3,8.8,2.9,19.1c1.9,6,4.7,11.5,8.3,16.1
+		c4.5,5.8,10.2,10.4,16.9,13.7l1,0.5l1-0.5c6.8-3.2,12.5-7.8,16.9-13.7c3.6-4.6,6.3-10.1,8.3-16.1C155.3,112.4,155,103.9,155,103.6z
+		"/>
+	<polygon class="verified-user-1 fill-white" points="138.4,110.8 135.2,114 123.2,125.9 117.2,119.9 116.4,119 114.7,120.7 114.7,120.7 113.1,122.3
+		123.2,132.4 141.6,114 	"/>
+</g>
+</svg>

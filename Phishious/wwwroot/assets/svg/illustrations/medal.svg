@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 155 152.9" style="enable-background:new 0 0 155 152.9;" xml:space="preserve">
+<style type="text/css">
+	.medal-0{fill:#00C9A7;}
+	.medal-1{fill:#00C9A7;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.medal-2{fill:#E7EAF3;}
+	.medal-3{fill:#FFC107;stroke:#FFFFFF;stroke-width:5;stroke-miterlimit:10;}
+	.medal-4{fill:#FFFFFF;}
+</style>
+<polygon class="medal-0" points="85.6,60 57.2,60 12.7,0 41.1,0 "/>
+<polygon class="medal-0" points="69.4,60 97.8,60 142.3,0 113.9,0 "/>
+<line class="medal-1" x1="127.4" y1="0" x2="85.6" y2="56.6"/>
+<line class="medal-1" x1="27.6" y1="0" x2="69.4" y2="56.6"/>
+<circle class="medal-2" cx="80.6" cy="105.2" r="47.9"/>
+<circle class="medal-3" cx="77.5" cy="98.3" r="47.9"/>
+<polygon class="medal-4" points="77.5,74.9 85.1,90.3 102.1,92.8 89.8,104.8 92.7,121.7 77.5,113.7 62.3,121.7 65.2,104.8 52.9,92.8
+	69.9,90.3 "/>
+</svg>

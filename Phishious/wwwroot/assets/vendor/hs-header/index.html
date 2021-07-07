@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Title -->
+		<title>Header</title>
+		
+		<!-- Required Meta Tags Always Come First -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../../favicon.ico">
+		
+		<!-- Google Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+		
+		<!-- CSS Implementing Plugins -->
+		
+		<!-- CSS Front Template -->
+		<style>
+			.header-moved-up {
+				transform: translate3d(0, -100%, 0);
+			}
+			
+			.header[data-hs-header-options*="fixMoment"] {
+				transition: 0.3s ease;
+			}
+		</style>
+		
+		<link rel="stylesheet" href="../../../assets/css/theme.css">
+	</head>
+	<body>
+		<header id="header" class="header header-abs-top-md header-show-hide-md bg-dark"
+		        data-hs-header-options='{
+		          "fixMoment": 500,
+		          "fixEffect": "slide"
+		        }'>
+			<div class="header-section">
+				<div id="logoAndNav" class="container">
+					<nav class="js-mega-menu navbar navbar-expand-md header-navbar header-navbar-no-space py-4">
+						<a class="navbar-brand header-navbar-brand" href="index.html" aria-label="Front">
+							<img src="../../../assets/svg/logos/logo.svg" alt="Logo">
+						</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		
+		<div style="height: 100vh;"></div>
+		
+		<div style="height: 100vh; background-color: #000;"></div>
+		
+		<div style="height: 100vh;"></div>
+		
+		<div style="height: 100vh; background-color: #000;"></div>
+		
+		<div style="height: 100vh;"></div>
+		
+		<div style="height: 100vh; background-color: #000;"></div>
+		
+		<script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="../../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+		<script src="../../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="../../../assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+		
+		<script src="./dist/hs-header.min.js"></script>
+		
+		<script>
+			$(window).on('load', function () {
+				var header = new HSHeader($('#header')).init();
+			});
+		</script>
+	</body>
+</html>

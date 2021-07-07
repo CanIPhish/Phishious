@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 337.5" style="enable-background:new 0 0 600 337.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;clip-path:url(#SVGID_2_);fill:#48C0B6;}
+	.st1{opacity:0.1;clip-path:url(#SVGID_2_);enable-background:new    ;}
+	.st2{opacity:0.8;clip-path:url(#SVGID_2_);fill:#FFCE00;}
+	.st3{opacity:0.8;clip-path:url(#SVGID_2_);fill:#00DFFC;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="600" height="337.5"/>
+	</defs>
+	<use xlink:href="#SVGID_1_"  style="overflow:visible;opacity:0.1;fill:#065ABF;"/>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;opacity:0.1;"/>
+	</clipPath>
+	<polygon class="st0" points="239.1,336.8 517.9,-11.7 818,280.5 812.8,312.7 736,417.5 238,337.9 	"/>
+	<ellipse class="st1" cx="630.3" cy="293.2" rx="71.2" ry="56.2"/>
+	<ellipse class="st1" cx="301.1" cy="51.6" rx="30" ry="12.7"/>
+	<circle class="st2" cx="569.5" cy="204.7" r="66.6"/>
+	<circle class="st3" cx="283.8" cy="31.8" r="25.2"/>
+</g>
+</svg>

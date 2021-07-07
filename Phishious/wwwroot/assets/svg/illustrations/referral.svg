@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 155 152.9" style="enable-background:new 0 0 155 152.9;" xml:space="preserve">
+<style type="text/css">
+	.referral-0{fill:#FFFFFF;}
+	.referral-1{fill:#FDD14E;}
+	.referral-2{fill:#FFC107;}
+</style>
+<g>
+	<defs>
+		<path id="referral_1_" d="M143.5,58.6c-2.3-1.9-4.3-4.2-5.9-6.8c-0.8-3.1-1-6.4-0.7-9.6c0.1-6.8,0.3-14.4-5.1-19.8
+			c-5.4-5.3-13-5.1-19.8-5.1c-3.2,0.3-6.5,0.1-9.6-0.7c-2.6-1.6-4.9-3.6-6.8-5.9C91,6,85.4,0,77.5,0S64,6,59.6,10.5
+			c-1.9,2.3-4.2,4.3-6.8,5.9c-3.1,0.8-6.4,1-9.6,0.7c-6.8-0.1-14.5-0.3-19.8,5.1c-5.3,5.3-5.1,13-5.1,19.8c0.3,3.2,0.1,6.5-0.7,9.6
+			c-1.6,2.6-3.6,4.9-5.9,6.8C7.1,62.9,1,68.6,1,76.5s6,13.5,10.6,17.9c2.3,1.9,4.3,4.2,5.9,6.8c0.8,3.1,1,6.4,0.7,9.6
+			c-0.1,6.8-0.4,14.4,4.9,19.8c5.4,5.3,13,5.1,19.8,5.1c3.2-0.3,6.5,0,9.6,0.7c2.6,1.6,4.9,3.6,6.8,5.9c4.5,4.7,10.1,10.7,18,10.7
+			s13.5-6,17.9-10.5c1.9-2.3,4.2-4.3,6.8-5.9c3.1-0.8,6.4-1,9.6-0.7c6.8,0.1,14.5,0.3,19.8-5.1c5.3-5.3,5.1-13,5.1-19.8
+			c-0.3-3.2-0.1-6.5,0.7-9.6c1.6-2.6,3.6-4.9,5.9-6.8c4.6-4.5,10.6-10.1,10.6-18S147.9,62.9,143.5,58.6z M32.8,121.1
+			c0,0-0.1-0.1-0.1-0.1c0.1,0.1,0.2,0.2,0.3,0.3C32.9,121.3,32.8,121.2,32.8,121.1z M122.2,121.1c0,0-0.1,0.1-0.1,0.1
+			c0.1-0.1,0.3-0.3,0.4-0.4C122.3,120.9,122.3,121.1,122.2,121.1z"/>
+	</defs>
+	<use xlink:href="#referral_1_"  style="overflow:visible;fill:#EC5245;"/>
+	<clipPath id="referral_2_">
+		<use xlink:href="#referral_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<circle class="referral-0 fill-white" opacity=".15" clip-path="url(#referral_2_)" cx="77.5" cy="76.5" r="49.6"/>
+	<g id="referralID_320_" clip-path="url(#referral_2_)">
+		<polygon id="referralID_327_" class="referral-2 fill-warning" points="83.4,66.8 64.9,65.4 79.7,48.3 		"/>
+		<polygon id="referralID_326_" class="referral-2 fill-warning" points="68.6,83.7 50.1,82.2 64.9,65.4 		"/>
+		<polygon id="referralID_325_" class="referral-2 fill-warning" points="104.9,100.5 53.6,100.5 98.2,49.7 		"/>
+		<polygon id="referralID_324_" class="referral-1 fill-warning-lighter" points="104.9,100.5 68.6,83.7 83.4,66.5 		"/>
+		<polygon id="referralID_323_" class="referral-1 fill-warning-lighter" points="50.1,82.2 53.6,100.5 68.4,83.7 		"/>
+		<polygon id="referralID_322_" class="referral-1 fill-warning-lighter" points="64.9,65.4 68.6,83.7 83.4,66.8 		"/>
+		<polygon id="referralID_321_" class="referral-1 fill-warning-lighter" points="79.7,48.3 83.4,66.5 98.2,49.7 		"/>
+	</g>
+</g>
+</svg>

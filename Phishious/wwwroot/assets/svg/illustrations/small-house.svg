@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 330 285" style="enable-background:new 0 0 330 285;" xml:space="preserve">
+<style type="text/css">
+	.small-house-0{fill:#E7EAF3;}
+  .small-house-1{fill:#DE4437;}
+  .small-house-2{fill:#FFFFFF;}
+  .small-house-3{fill:#377DFF;}
+  .small-house-4{fill:#F8FAFD;}
+  .small-house-5{fill:#8C98A4;}
+  .small-house-6{fill:#BDC5D1;}
+  .small-house-7{fill:#377DFF;}
+</style>
+<g>
+	<rect x="71.5" y="121.5" class="small-house-0 fill-gray-300" width="187.1" height="163.1"/>
+</g>
+<g opacity=".7">
+  <linearGradient id="smallHouseID1" gradientUnits="userSpaceOnUse" x1="120.5139" y1="116.7469" x2="120.5139" y2="72.2609" gradientTransform="matrix(1 0 0 1 0 1)">
+		<stop  offset="0" style="stop-color:#808080;stop-opacity:0.25"/>
+		<stop  offset="0.54" style="stop-color:#808080;stop-opacity:0.12"/>
+		<stop  offset="1" style="stop-color:#808080;stop-opacity:0.1"/>
+	</linearGradient>
+	<rect x="109.2" y="73.3" fill="url(#smallHouseID1)" width="22.6" height="44.5"/>
+</g>
+<rect x="109.8" y="73.8" class="small-house-1 fill-danger" width="21.3" height="43.9"/>
+<g>
+	<polygon class="small-house-0 fill-gray-300" points="233.7,282.7 97.1,282.7 97.1,115.6 165.9,114 233.7,115.6 	"/>
+</g>
+<polygon class="small-house-2 fill-white" points="232.1,282.7 99.2,282.7 99.2,115.6 165.6,68.4 232.1,115.6 "/>
+<rect x="148.8" y="226.6" class="small-house-3 fill-primary" width="33.5" height="56.1"/>
+<rect x="134.8" y="140.6" class="small-house-4 fill-gray-200" opacity=".5" width="61.5" height="38.3"/>
+<rect x="131.2" y="175.7" class="small-house-5 fill-gray-600" width="68.9" height="6.7"/>
+<g>
+	<rect x="134.8" y="140.6" class="small-house-6 fill-gray-400" width="61.5" height="15.3"/>
+</g>
+<g opacity=".7">
+	<polygon class="small-house-7 fill-primary-darker" points="241,129.8 165.9,71.5 93,129.8 87.3,122.6 165.7,60 246.5,122.5 	"/>
+</g>
+<polygon class="small-house-7 fill-primary-darker" points="241,130.3 165.9,72.3 93,130.3 87.3,123.2 165.7,60.5 246.5,123.2 "/>
+<circle class="small-house-2 fill-white" cx="177.4" cy="254.6" r="2.4"/>
+</svg>

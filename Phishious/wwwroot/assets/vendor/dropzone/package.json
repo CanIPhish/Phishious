@@ -1,0 +1,65 @@
+{
+  "_from": "dropzone@^5.7.1",
+  "_id": "dropzone@5.7.2",
+  "_inBundle": false,
+  "_integrity": "sha512-m217bJHtf0J1IiKn4Tv6mnu1h5QvQNBnKZ39gma7hzGQhIZMxYq1vYEHs4AVd4ThFwmALys+52NAOD4zdLTG4w==",
+  "_location": "/dropzone",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "dropzone@^5.7.1",
+    "name": "dropzone",
+    "escapedName": "dropzone",
+    "rawSpec": "^5.7.1",
+    "saveSpec": null,
+    "fetchSpec": "^5.7.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/dropzone/-/dropzone-5.7.2.tgz",
+  "_shasum": "91bee1572dda515d40901da304bc79dddf309b4c",
+  "_spec": "dropzone@^5.7.1",
+  "_where": "/Applications/MAMP/htdocs/Front-v1.0",
+  "bugs": {
+    "url": "https://gitlab.com/meno/dropzone/issues",
+    "email": "m@tias.me"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Matias Meno",
+      "email": "m@tias.me",
+      "url": "http://www.colorglare.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "Handles drag and drop of files for you.",
+  "homepage": "http://www.dropzonejs.com",
+  "keywords": [
+    "dragndrop",
+    "drag and drop",
+    "file upload",
+    "upload"
+  ],
+  "license": "MIT",
+  "main": "./dist/dropzone.js",
+  "maintainers": [
+    {
+      "name": "Matias Meno",
+      "email": "m@tias.me",
+      "url": "http://www.colorglare.com"
+    }
+  ],
+  "name": "dropzone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/meno/dropzone.git"
+  },
+  "scripts": {
+    "test": "grunt && npm run test-prebuilt",
+    "test-prebuilt": "mocha-headless-chrome -f test/test-prebuilt.html -a no-sandbox -a disable-setuid-sandbox"
+  },
+  "version": "5.7.2"
+}

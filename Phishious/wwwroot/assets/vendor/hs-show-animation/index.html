@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Title -->
+		<title>Show Animation</title>
+
+		<!-- Required Meta Tags Always Come First -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../../favicon.ico">
+
+		<!-- Google Fonts -->
+		<!-- Font -->
+  <link rel="preload" href="../../assets/vendor/inter-font-family/Inter-Regular.woff2" as="font">
+  <link rel="preload" href="../../assets/vendor/inter-font-family/Inter-SemiBold.woff2" as="font">
+
+
+		<!-- CSS Implementing Plugins -->
+
+		<!-- CSS Front Template -->
+		<link rel="stylesheet" href="../../../assets/css/theme.css">
+	</head>
+	<body>
+		<div style="height: 20vh;"></div>
+
+		<div class="container">
+			<div class="mb-5">
+				<h2>Simple</h2>
+
+				<div class="btn-group btn-group-toggle">
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide active" href="javascript:;"
+					   data-hs-show-animation-options='{
+				     "targetSelector": "#firstContent",
+				     "groupName": "groups"
+				   }'>First content</a>
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide" href="javascript:;"
+					   data-hs-show-animation-options='{
+				     "targetSelector": "#secondContent",
+				     "groupName": "groups"
+				   }'>Second content</a>
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide" href="javascript:;"
+					   data-hs-show-animation-options='{
+				     "targetSelector": "#thirdContent",
+				     "groupName": "groups"
+				   }'>Third content</a>
+				</div>
+
+				<div id="firstContent" class="py-5">
+					<h2>First content</h2>
+					<p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is a key point.</p>
+				</div>
+
+				<div id="secondContent" class="py-5" style="display: none; opacity: 0;">
+					<h2>Second content</h2>
+					<p>Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.</p>
+				</div>
+
+				<div id="thirdContent" class="py-5" style="display: none; opacity: 0;">
+					<h2>Third content</h2>
+					<p>The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+				</div>
+			</div>
+
+			<div class="mb-5">
+				<h2>CSS Animation</h2>
+
+				<div class="btn-group btn-group-toggle">
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide active" href="javascript:;"
+					   data-hs-show-animation-options='{
+					     "targetSelector": "#cssFirstContent",
+					     "groupName": "css-groups",
+					     "animationType": "css-animation",
+					     "animationIn": "slideInUp",
+					     "duration": 400
+					   }'>First content</a>
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide" href="javascript:;"
+					   data-hs-show-animation-options='{
+					     "targetSelector": "#cssSecondContent",
+					     "groupName": "css-groups",
+					     "animationType": "css-animation",
+					     "animationIn": "slideInUp",
+					     "duration": 400
+					   }'>Second content</a>
+					<a class="js-animation-link btn btn-sm btn-outline-secondary btn-sm-wide" href="javascript:;"
+					   data-hs-show-animation-options='{
+					     "targetSelector": "#cssThirdContent",
+					     "groupName": "css-groups",
+					     "animationType": "css-animation",
+					     "animationIn": "slideInUp",
+					     "duration": 400
+					   }'>Third content</a>
+				</div>
+
+				<div id="cssFirstContent" class="py-5">
+					<h2>First content</h2>
+					<p>This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is a key point.</p>
+				</div>
+
+				<div id="cssSecondContent" class="py-5" style="display: none; opacity: 0;">
+					<h2>Second content</h2>
+					<p>Now that we've aligned the details, it's time to get things mapped out and organized. This part is really crucial in keeping the project in line to completion.</p>
+				</div>
+
+				<div id="cssThirdContent" class="py-5" style="display: none; opacity: 0;">
+					<h2>Third content</h2>
+					<p>The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+				</div>
+			</div>
+		</div>
+
+		<div style="height: 20vh;"></div>
+
+		<script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="../../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+		<script src="../../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+		<script src="./dist/hs-show-animation.min.js"></script>
+
+		<script>
+			$(document).on('ready', function () {
+				$('.js-animation-link').each(function () {
+					var showAnimation = new HSShowAnimation($(this)).init();
+				});
+			});
+		</script>
+	</body>
+</html>

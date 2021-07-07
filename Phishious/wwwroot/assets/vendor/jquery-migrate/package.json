@@ -1,0 +1,111 @@
+{
+  "_from": "jquery-migrate@^3.3.0",
+  "_id": "jquery-migrate@3.3.1",
+  "_inBundle": false,
+  "_integrity": "sha512-QAXfshB6xqaANDX8OPExKnnooLtX0cSDCKfRnqhdv+3CVEVD9L1v3zNAhZum/4AukKlWUWUoxM6ywJJcLMXLSA==",
+  "_location": "/jquery-migrate",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "jquery-migrate@^3.3.0",
+    "name": "jquery-migrate",
+    "escapedName": "jquery-migrate",
+    "rawSpec": "^3.3.0",
+    "saveSpec": null,
+    "fetchSpec": "^3.3.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-migrate/-/jquery-migrate-3.3.1.tgz",
+  "_shasum": "0f8e2b7531228fda5d88be58dc0e7d5848e52fd1",
+  "_spec": "jquery-migrate@^3.3.0",
+  "_where": "/Applications/MAMP/htdocs/Front-v1.0",
+  "author": {
+    "name": "OpenJS Foundation and other contributors",
+    "url": "https://openjsf.org"
+  },
+  "bugs": {
+    "url": "http://bugs.jquery.com/"
+  },
+  "bundleDependencies": false,
+  "commitplease": {
+    "components": [
+      "Docs",
+      "Tests",
+      "Build",
+      "Release",
+      "Core",
+      "Ajax",
+      "Attributes",
+      "Callbacks",
+      "CSS",
+      "Data",
+      "Deferred",
+      "Deprecated",
+      "Dimensions",
+      "Effects",
+      "Event",
+      "Manipulation",
+      "Offset",
+      "Queue",
+      "Selector",
+      "Serialize",
+      "Traversing",
+      "Wrap"
+    ]
+  },
+  "deprecated": false,
+  "description": "Migrate older jQuery code to jQuery 3.0+",
+  "devDependencies": {
+    "chalk": "4.0.0",
+    "commitplease": "3.2.0",
+    "eslint": "7.2.0",
+    "eslint-config-jquery": "3.0.0",
+    "eslint-plugin-import": "2.21.1",
+    "grunt": "1.1.0",
+    "grunt-cli": "1.3.2",
+    "grunt-compare-size": "0.4.2",
+    "grunt-contrib-uglify": "4.0.1",
+    "grunt-contrib-watch": "1.1.0",
+    "grunt-eslint": "23.0.0",
+    "grunt-karma": "4.0.0",
+    "gzip-js": "0.3.2",
+    "karma": "5.0.9",
+    "karma-browserstack-launcher": "1.6.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-firefox-launcher": "1.3.0",
+    "karma-qunit": "4.1.1",
+    "load-grunt-tasks": "5.1.0",
+    "native-promise-only": "0.8.1",
+    "qunit": "2.10.0",
+    "rollup": "2.15.0",
+    "testswarm": "1.1.2"
+  },
+  "homepage": "https://github.com/jquery/jquery-migrate",
+  "keywords": [
+    "jquery",
+    "javascript",
+    "browser",
+    "plugin",
+    "migrate"
+  ],
+  "license": "MIT",
+  "main": "dist/jquery-migrate.js",
+  "name": "jquery-migrate",
+  "peerDependencies": {
+    "jquery": ">=3 <4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery/jquery-migrate.git"
+  },
+  "scripts": {
+    "build": "grunt default-no-test",
+    "ci": "grunt ci",
+    "test": "grunt test"
+  },
+  "title": "jQuery Migrate",
+  "version": "3.3.1"
+}

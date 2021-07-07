@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 330 285" style="enable-background:new 0 0 330 285;" xml:space="preserve">
+<style type="text/css">
+	.multi-family-house-0{fill:#E7EAF3;}
+  .multi-family-house-1{fill:#F8FAFD;}
+  .multi-family-house-2{fill:#377DFF;}
+  .multi-family-house-3{fill:#2369eb;}
+  .multi-family-house-4{fill:#8C98A4;}
+  .multi-family-house-5{fill:#BDC5D1;}
+  .multi-family-house-6{fill:#377DFF;}
+  .multi-family-house-7{fill:#DE4437;}
+  .multi-family-house-8{fill:#FFFFFF;}
+</style>
+<g>
+	<polygon class="multi-family-house-0 fill-gray-300" points="313.8,285 19.1,285 21.1,147 105.4,133 224.5,133 311.7,142.9 	"/>
+</g>
+<g opacity=".7">
+  <linearGradient id="multiFamilyHouseID1" gradientUnits="userSpaceOnUse" x1="122.25" y1="125.06" x2="122.25" y2="82.66" gradientTransform="matrix(1 0 0 1 0 1)">
+		<stop  offset="0" style="stop-color:#808080;stop-opacity:0.25"/>
+		<stop  offset="0.54" style="stop-color:#808080;stop-opacity:0.12"/>
+		<stop  offset="1" style="stop-color:#808080;stop-opacity:0.1"/>
+	</linearGradient>
+	<rect x="111.5" y="83.6" fill="url(#multiFamilyHouseID1)" width="21.5" height="42.4"/>
+</g>
+<g>
+	<polygon class="multi-family-house-1 fill-gray-200" points="111.5,180 111.5,134.2 18.1,134.2 2.2,180 2.2,184.8 112.1,184.8 112.1,180 	"/>
+</g>
+<polygon class="multi-family-house-2 fill-primary" points="111.5,180.1 3.4,180.1 19.1,134.8 111.5,134.8 "/>
+<rect x="3.4" y="180.1" class="multi-family-house-3 fill-success" width="108.7" height="4.6"/>
+<g>
+	<polygon class="multi-family-house-1 fill-gray-200" points="312.7,133.6 219,133.6 219,180 218.4,180 218.4,184.7 328.6,184.7 328.6,180 	"/>
+</g>
+<polygon class="multi-family-house-2 fill-primary" points="219,134.8 311.4,134.8 327.1,180.1 219,180.1 "/>
+<rect x="218.4" y="180.1" class="multi-family-house-3 fill-success" width="108.7" height="4.6"/>
+<rect x="32.5" y="203.1" class="multi-family-house-1 fill-gray-200" opacity=".5" width="58.7" height="36.6"/>
+<rect x="29" y="237.1" class="multi-family-house-4 fill-gray-600" opacity=".1" width="65.7" height="6.4"/>
+<rect x="29" y="236.5" class="multi-family-house-4 fill-gray-600" width="65.7" height="6.4"/>
+<g>
+	<rect x="32.5" y="203.1" class="multi-family-house-5 fill-gray-400" width="58.7" height="14.5"/>
+</g>
+<rect x="239.9" y="203.1" class="multi-family-house-1 fill-gray-200" opacity=".5" width="58.7" height="36.6"/>
+<rect x="236.5" y="237.1" class="multi-family-house-4 fill-gray-600" opacity=".1" width="65.7" height="6.4"/>
+<rect x="236.5" y="236.5" class="multi-family-house-4 fill-gray-600" width="65.7" height="6.4"/>
+<g>
+	<rect x="239.9" y="203.1" class="multi-family-house-5 fill-gray-400" width="58.7" height="14.5"/>
+</g>
+<g opacity=".7">
+	<polygon class="multi-family-house-6 fill-primary-darker" points="237.1,137.5 165.4,82.1 96.1,137.5 90.6,130.6 165.4,71 242.5,130.6 	"/>
+</g>
+<rect x="112.1" y="84.2" class="multi-family-house-7 fill-danger" width="20.3" height="41.8"/>
+<g>
+	<polygon class="multi-family-house-0 fill-gray-300" points="230.1,283.3 99.9,283.3 99.9,124 165.5,122.6 230.1,124 	"/>
+</g>
+<polygon class="multi-family-house-8 fill-white" points="228.6,283.3 101.9,283.3 101.9,124 165.3,79 228.6,124 "/>
+<rect x="149.3" y="229.8" class="multi-family-house-2 fill-primary" width="32" height="53.5"/>
+<rect x="132.4" y="181.9" class="multi-family-house-4 fill-gray-600" opacity=".1" width="65.7" height="6.4"/>
+<rect x="135.9" y="147.9" class="multi-family-house-1 fill-gray-200" opacity=".5" width="58.7" height="36.6"/>
+<rect x="132.4" y="181.3" class="multi-family-house-4 fill-gray-600" width="65.7" height="6.4"/>
+<g>
+	<rect x="135.9" y="147.9" class="multi-family-house-5 fill-gray-400" width="58.7" height="14.5"/>
+</g>
+<polygon class="multi-family-house-6 fill-primary-darker" points="237.1,138.1 165.4,82.6 96.1,138 90.6,131.2 165.4,71.5 242.5,131.2 "/>
+<circle class="multi-family-house-8 fill-white" cx="176.6" cy="256.5" r="2.3"/>
+</svg>

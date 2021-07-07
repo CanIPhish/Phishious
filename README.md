@@ -10,14 +10,14 @@ What is Phishious?
 ![image](https://user-images.githubusercontent.com/5109530/124600797-74c7f480-deaa-11eb-859d-a1126dce732f.png)
 
 ### Why use Phishious?
-We're not joking when we say that Phishious is a world first in Secure Email Gateway evaluation. There is currently no other tool available (free or paid) that provides the ability for you as a red-teamer to scan your phish against an array of Secure Email Gateways. The closest utility is VirusTotal however this specifically focuses on Malware detection and not Spam/Phish detection.
+We're not joking when we say that Phishious is a world first in Secure Email Gateway evaluation. There is currently no other tool available (free or paid) that provides you the ability to scan your phish against an array of Secure Email Gateways. The closest utility is VirusTotal, however this specifically focuses on Malware detection and not Spam/Phish detection.
 
 Through use of Phishious, you'll be able to freely test your phishing material against the world's most popular Secure Email Gateways. This is an invaluable capability as it provides you an indication of how successful your phishing campaign may be.
 
 ### How does Phishious work?
 Phishious exploits a common misconfiguration where many organisations broadcast overly sensitive information in email bounce responses and non-delivery reports. The sensitive information typically comes in the form of original untampered inbound message headers. 
 
-By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets quarantine folder or be completely blocked by the SEG. When we scale this up from 1 target to many, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.
+By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets junk folder or be completely blocked by the SEG. When we scale this across many targets, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.
 
 To better understand email bounce attacks and the resulting issues, please read the following [Linkedin Article](https://www.linkedin.com/pulse/abusing-exchange-postmaster-bypass-email-spam-malware-sebastian-salla/) or watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
 
@@ -30,8 +30,7 @@ Windows 10 Endpoint or Windows Server 2012+ with .NET Core 5.0 onwards
 Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to either use the [CanIPhish hosted Phishious Toolkit](https://caniphish.com/Phishious/Index) or to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
 
 ### How to use Phishious
-A Phishious scan is comprised of four distinct phases. These phases are outlined in detail below:
-Markup : <details>
+ <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
   <br />
            <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
@@ -112,7 +111,7 @@ Phishious - Open-Source Secure Email Gateway Evaluation Toolkit
 
 The MIT License (MIT)
 
-Copyright (c) 2021 - 2021 Sebastian Salla
+Copyright (c) 2021 - 2021 CanIPhish Pty Ltd
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software ("Phishious Community Edition") and associated documentation files (the "Software"), to deal

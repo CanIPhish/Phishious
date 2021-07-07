@@ -1,0 +1,80 @@
+{
+  "_from": "aos@^2.3.4",
+  "_id": "aos@2.3.4",
+  "_inBundle": false,
+  "_integrity": "sha512-zh/ahtR2yME4I51z8IttIt4lC1Nw0ktsFtmeDzID1m9naJnWXhCoARaCgNOGXb5CLy3zm+wqmRAEgMYB5E2HUw==",
+  "_location": "/aos",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "aos@^2.3.4",
+    "name": "aos",
+    "escapedName": "aos",
+    "rawSpec": "^2.3.4",
+    "saveSpec": null,
+    "fetchSpec": "^2.3.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/aos/-/aos-2.3.4.tgz",
+  "_shasum": "eb1c29f5c1806a197cf6323080747547edd3db8e",
+  "_spec": "aos@^2.3.4",
+  "_where": "/Applications/MAMP/htdocs/Front-v1.0",
+  "author": {
+    "name": "Michał Sajnóg",
+    "email": "michal.sajnog@hotmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/michalsnik/aos/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "classlist-polyfill": "^1.0.3",
+    "lodash.debounce": "^4.0.6",
+    "lodash.throttle": "^4.0.1"
+  },
+  "deprecated": false,
+  "description": "Animate on scroll library",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jasmine-core": "^2.3.4",
+    "jasmine-fixture": "^2.0.0",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.1.1",
+    "karma": "^1.4.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-jquery": "^0.1.1",
+    "karma-webpack": "^2.0.1",
+    "node-sass": "^4.3.0",
+    "phantomjs": "^2.1.7",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "homepage": "https://michalsnik.github.io/aos/",
+  "license": "MIT",
+  "main": "dist/aos.js",
+  "name": "aos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalsnik/aos.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "node ./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "version": "2.3.4"
+}

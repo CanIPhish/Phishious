@@ -1,0 +1,88 @@
+{
+  "_from": "jquery-validation@^1.19.2",
+  "_id": "jquery-validation@1.19.2",
+  "_inBundle": false,
+  "_integrity": "sha512-yHaAqOGaAB7+p2u5lpzhhQVt3CBMUw3fHcuCJ7nXmXz0LWLHPN7yOhwnocp5nrn2SmnXR1jpV+whx2j1kLz1tQ==",
+  "_location": "/jquery-validation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "jquery-validation@^1.19.2",
+    "name": "jquery-validation",
+    "escapedName": "jquery-validation",
+    "rawSpec": "^1.19.2",
+    "saveSpec": null,
+    "fetchSpec": "^1.19.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.2.tgz",
+  "_shasum": "c602831b0d8c5881400af424e872757ce241eff9",
+  "_spec": "jquery-validation@^1.19.2",
+  "_where": "/Applications/MAMP/htdocs/Front-v1.0",
+  "author": {
+    "name": "Jörn Zaefferer",
+    "email": "joern.zaefferer@gmail.com",
+    "url": "http://bassistance.de"
+  },
+  "bugs": {
+    "url": "https://github.com/jquery-validation/jquery-validation/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Client-side form validation made easy",
+  "devDependencies": {
+    "commitplease": "2.3.1",
+    "grunt": "1.0.1",
+    "grunt-contrib-compress": "1.2.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-jshint": "1.0.0",
+    "grunt-contrib-qunit": "1.2.0",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-jscs": "2.8.0",
+    "grunt-sri": "0.2.0",
+    "grunt-text-replace": "0.4.0",
+    "qunitjs": "2.3.3"
+  },
+  "files": [
+    "dist/localization/",
+    "dist/additional-methods.js",
+    "dist/additional-methods.min.js",
+    "dist/jquery.validate.js",
+    "dist/jquery.validate.min.js"
+  ],
+  "homepage": "https://jqueryvalidation.org/",
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "forms",
+    "validation",
+    "validate"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "dist/jquery.validate.js",
+  "name": "jquery-validation",
+  "peerDependencies": {
+    "jquery": "^1.7 || ^2.0 || ^3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery-validation/jquery-validation.git"
+  },
+  "scripts": {
+    "prepublish": "grunt",
+    "test": "grunt"
+  },
+  "title": "jQuery Validation Plugin",
+  "version": "1.19.2"
+}

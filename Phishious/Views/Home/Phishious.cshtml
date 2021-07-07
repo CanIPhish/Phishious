@@ -1,0 +1,891 @@
+﻿<link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
+
+<div class="position-relative overflow-hidden bg-light z-index-2">
+    <div class="container space-top-3 position-relative">
+        <figure class="position-absolute z-index-n1" style="top: -35rem; left: 55rem; width: 55rem; height: 55rem;">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 260 260">
+                <circle fill="#e7eaf3" opacity=".7" cx="130" cy="130" r="130" />
+            </svg>
+        </figure>
+        <figure class="position-absolute z-index-n1" style="top: 15rem; left: 75rem; width: 20rem; height: 20rem;">
+            <img class="img-fluid" src="../../assets/svg/components/circled-stripe.svg" alt="Image Description">
+        </figure>
+        <figure class="position-absolute z-index-n1" style="bottom: 7rem; left: -20rem; width: 15rem; height: 15rem;">
+            <img class="img-fluid" src="../../assets/svg/components/dots-3.svg" alt="Image Description">
+        </figure>
+        <!-- Title -->
+        <div class="w-md-80 w-lg-60 text-center mx-md-auto">
+            <span class="d-block small font-weight-bold text-cap mb-2">Has your email been flagged as malicious?</span>
+            <h2>Step 1: Filter Priming (Non-Malicious Mail)</h2>
+        </div>
+
+
+        <!-- Dropzone -->
+        <div id="phishiousDropZone" class="js-dropzone dz-dropzone dz-dropzone-boxed gradient-overlay-half-primary-v4">
+            <div class="dz-message py-6">
+                <figure class="max-w-10rem mx-auto mb-3">
+                    <img class="img-fluid" src="../../assets/svg/illustrations/drag-n-drop.svg" alt="Image Description">
+                </figure>
+                <span class="d-block" style="font-size:large">Drag files here to upload</span>
+            </div>
+        </div>
+
+        <div class="col-sm-auto p-2">
+            <button id="phishious-submit" type="submit" class="btn btn-block btn-primary px-5" onclick="return DisplayProgressMessage(this, 'Priming Filters...');" disabled>Prime Filters</button>
+        </div>
+        <!-- End Dropzone -->
+    </div>
+    <!-- Features Section -->
+    <div>
+        <div class="container-lg space-2">
+            <!-- Title -->
+            <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+                <h2>What email spam and malware filters can phishious analyse?</h2>
+            </div>
+            <!-- End Title -->
+
+            <div class="w-md-80 mx-md-auto">
+                <div class="row justify-content-lg-center align-items-md-center">
+                    <div class="col-md-4 mb-7 mb-md-0">
+                        <!-- Features -->
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Cisco IronPort
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Sophos PureMessage
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Sophos ESA
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Trustwave SEG
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                McAfee AV
+                            </div>
+                        </div>
+                        <a class="media" href="#">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Exchange Online Protection
+                            </div>
+                        </a>
+                        <!-- End Features -->
+                    </div>
+
+                    <div class="col-md-4 mb-7 mb-md-0">
+                        <!-- Features -->
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Proofpoint SEG
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                FireEye MX
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                FireEye ETP Cloud
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Forcepoint SEG
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Forcepoint Cloud
+                            </div>
+                        </div>
+                        <a class="media" href="#">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Trend Micro HES
+                            </div>
+                        </a>
+                        <!-- End Features -->
+                    </div>
+                    <div class="col-md-4 mb-7 mb-md-0">
+                        <!-- Features -->
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Symantec MessageLabs
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Mimecast SEG
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Clearswift SEG
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Sophos AV
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <div class="media-body text-dark">
+                                Barracuda Email Security
+                            </div>
+                        </div>
+                        <a class="media" href="#">
+                            <span class="icon icon-xs icon-soft-light icon-circle mr-3">
+                                @*<i class="fas fa-check"></i>*@
+                            </span>
+                            <div class="media-body text-dark">
+                                @*Barracuda Email Security*@
+                            </div>
+                        </a>
+                        <!-- End Features -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="step2Seperator" class="container"><hr /></div>
+    </div>
+    <!-- End Features Section -->
+    @*<style>
+            .col-lg-2{
+                padding-left:5px;
+                padding-right:5px;
+            }
+        </style>*@
+
+    <div id="detonateContainer" class="container space-2" style="display:none">
+        <div class="w-md-80 w-lg-60 text-center mx-md-auto">
+            <h2>Step 2: Filter Detonation (Malicious Mail)</h2>
+        </div>
+        <!-- Dropzone -->
+        <div id="detonateDropZone" class="js-dropzone dz-dropzone dz-dropzone-boxed gradient-overlay-half-primary-v4">
+            <div class="dz-message py-6">
+                <figure class="max-w-10rem mx-auto mb-3">
+                    <img class="img-fluid" src="../../assets/svg/illustrations/drag-n-drop.svg" alt="Image Description">
+                </figure>
+                <span class="d-block" style="font-size:large">Drag files here to upload</span>
+            </div>
+        </div>
+
+        <div class="col-sm-auto p-2">
+            <button id="detonate-submit" type="submit" class="btn btn-block btn-primary px-5" onclick="return DisplayProgressMessage(this, 'Detonating Filters...');">Detonate Filters</button>
+        </div>
+        <!-- End Dropzone -->
+    </div>
+    <div id="analysisDiv" class="container space" style="display:none">
+        <!-- Card -->
+        <div class="card">
+            <!-- Header -->
+            <div class="card-header bg-light">
+                <h2 class="card-header-title" style="margin:auto">Step 3. Phishious Result Analysis</h2>
+            </div>
+            <!-- End Header -->
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle">
+                    <thead style="background-color:#efefef; color:black">
+                        <tr>
+                            <th>Email Filter</th>
+                            <th>Status</th>
+                            <th style="width: 5%;"></th>
+                            <th>Email Filter</th>
+                            <th>Status</th>
+                            <th style="width: 5%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cisco IronPort</td>
+                            <td id="ciscoIronPortStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="ciscoIronPortView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Cisco IronPort');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Sophos AV</td>
+                            <td id="sophosAVStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="sophosAVView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos AV');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>McAfee AV</td>
+                            <td id="mcafeeAVStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="mcafeeAVView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('McAfee AV');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Sophos ESA</td>
+                            <td id="sophosESAStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="sophosESAView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos ESA');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Sophos PureMessage</td>
+                            <td id="sophosPureMessageStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="sophosPureMessageView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos PureMessage');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Trustwave SEG</td>
+                            <td id="trustwaveSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="trustwaveSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Trustwave SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Exchange Online Protection</td>
+                            <td id="eopStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="eopView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Exchange Online Protection');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Proofpoint SEG</td>
+                            <td id="proofpointSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="proofpointSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Proofpoint SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>FireEye MX</td>
+                            <td id="fireEyeMXStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="fireEyeMXView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('FireEye MX');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>FireEye ETP Cloud</td>
+                            <td id="fireEyeETPStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="fireEyeETPView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('FireEye ETP Cloud');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Forcepoint ESG</td>
+                            <td id="forcepointESGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="forcepointESGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Forcepoint ESG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Trend Micro HES</td>
+                            <td id="trendMicroHESStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="trendMicroHESView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Trend Micro HES');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Symantec MessageLabs</td>
+                            <td id="symantecMessageLabsStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="symantecMessageLabsView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Symantec MessageLabs');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Mimecast SEG</td>
+                            <td id="mimecastSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="mimecastSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Mimecast SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Forcepoint Cloud</td>
+                            <td id="forcepointCloudStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="forcepointCloudView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Forcepoint Cloud');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                            <td>Clearswift SEG</td>
+                            <td id="clearswiftSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="clearswiftSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Clearswift SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                        <tr>
+                            <td>Barracuda Email Security</td>
+                            <td id="barracudaESStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                            <td><a id="barracudaESView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Barracuda Email Security');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- End Table -->
+        </div>
+        <!-- End Card -->
+
+    </div>
+</div>
+<!-- Invoice Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px">
+        <div class="modal-content">
+            <!-- Body -->
+            <div class="modal-body pt-3 pb-sm-5 px-sm-5">
+                <div class="text-center mb-5">
+                    <h3 class="mb-1" id="fNameDetail">Unspecified</h3>
+                    <span class="d-block" id="statusDetail">Unspecified</span>
+                </div>
+
+                <small class="text-cap mb-2">Summary</small>
+                <div id="filterDetailSummary" class=" m-t-20">
+                </div>
+                <hr class="my-5">
+
+                <p class="modal-footer-text">If you have any questions, please contact us at <a href="mailto:admin@caniphish.com">admin@caniphish.com</a>.</p>
+            </div>
+            <!-- End Body -->
+        </div>
+    </div>
+</div>
+<!-- End Invoice Modal -->
+<figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+    <polygon fill="#f9fbff" points="1921,0 0,0 0,273 " />
+
+      </svg>
+</figure>
+<script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+<script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+
+<script>
+    // INITIALIZATION OF DROPZONE
+    // =======================================================
+    Dropzone.autoDiscover = false;
+
+    var filePreview = `<div class="dz-preview dz-file-preview">
+            <div class="dz-details" >
+                <div class="dz-filename"><span data-dz-name></span></div>
+                <div class="dz-size" data-dz-size></div>
+                <img data-dz-thumbnail />
+              </div >
+              <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+              <div class="dz-error-message"><span data-dz-errormessage></span></div>
+            </div >`;
+
+    var arr_from_json;
+
+    var dropzoneOptions = {
+        dictDefaultMessage: 'Drop Here!',
+        autoProcessQueue: false,
+        parallelUploads: 1100,
+        uploadMultiple: true,
+        url: "/Home/PhishiousResult",
+        paramName: "file",
+        maxFilesize: 1, // MB
+        previewTemplate: filePreview,
+        addRemoveLinks: true,
+        init: function () {
+            this.on("successmultiple", function (file, response) {
+                console.log("successmultiple > " + file.name);
+
+                if (response != "No Filters Found") {
+                    arr_from_json = JSON.parse(response);
+                }
+                console.log(arr_from_json);
+                for (var i in arr_from_json) {
+                    primeFilter(arr_from_json[i]);
+                }
+
+                $("#detonateContainer").show();
+                $("#analysisDiv").show();
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#step2Seperator").offset().top
+                }, 1000);
+                $("#phishious-submit").css("background", "#00c9a7");
+                $("#phishious-submit").css("border-color", "#00c9a7");
+                $("#phishious-submit").html("Filters Primed");
+                $('#phishious-submit').prop('disabled', true);
+            });
+        }
+    };
+
+
+    var myDropzone = new Dropzone("div#phishiousDropZone", dropzoneOptions);
+
+    var fileString = [];
+    var fileArray = [];
+
+    myDropzone.on("addedfile", function (file) {
+        console.log('Primer file added!!!');
+        $('#phishious-submit').prop('disabled', false);
+        $("#phishious-submit").html("Prime Filters");
+        $("#phishious-submit").css("background", "#377dff");
+        $("#phishious-submit").css("border-color", "#377dff");
+        //fileArray.push(file);
+        //const reader = new FileReader();
+        //reader.onload = () => {
+        //    const fileAsBinaryString = reader.result;
+        //    console.log(fileAsBinaryString);
+        //    fileString.push(fileAsBinaryString);
+        //    // do whatever you want with the file content
+        //};
+        //reader.onabort = () => console.log('file reading was aborted');
+        //reader.onerror = () => console.log('file reading has failed');
+
+        //reader.readAsBinaryString(file);
+    });
+
+
+    $("#phishious-submit").click(function (e) {
+        e.preventDefault();
+        myDropzone.processQueue();
+    });
+</script>
+<script>
+    var detonateFileString = [];
+    var detonateFileArray = [];
+    var dfilter_array;
+
+
+    var dropzoneDetonateOptions = {
+        dictDefaultMessage: 'Drop Here!',
+        autoProcessQueue: false,
+        parallelUploads: 1100,
+        uploadMultiple: true,
+        url: "/Home/PhishiousDetonate",
+        paramName: "file",
+        maxFilesize: 1, // MB
+        previewTemplate: filePreview,
+        addRemoveLinks: true,
+        init: function () {
+            this.on("successmultiple", function (file, response) {
+                console.log("successmultiple > " + file.name);
+
+                if (response != "No Filters Found") {
+                    dfilter_array = JSON.parse(response);
+                }
+                console.log(dfilter_array);
+                detonateFilter(dfilter_array);
+
+                //for (var i in arr_from_json) {
+                //    primeFilter(arr_from_json[i]);
+                //}
+
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#detonate-submit").offset().top
+                }, 1000);
+                $("#detonate-submit").css("background", "#ed4c78");
+                $("#detonate-submit").css("border-color", "#ed4c78");
+                $("#detonate-submit").html("Filters Detonated");
+                $('#detonate-submit').prop('disabled', true);
+                detonateFileArray = [];
+            });
+        }
+    };
+
+
+    var myDetonateDropzone = new Dropzone("div#detonateDropZone", dropzoneDetonateOptions);
+
+    myDetonateDropzone.on("addedfile", function (file) {
+        detonateFileArray.push(file);
+        console.log('Detonation file added!!!');
+        $("#detonate-submit").html("Detonate Filters");
+        $("#detonate-submit").css("background", "#377dff");
+        $("#detonate-submit").css("border-color", "#377dff");
+    });
+
+
+    $("#detonate-submit").click(function (e) {
+        e.preventDefault();
+        console.log(detonateFileArray.length);
+
+        if (detonateFileArray.length == 0) {
+            detonateFilter(detonateFileArray);
+            $("#detonate-submit").css("background", "#ed4c78");
+            $("#detonate-submit").css("border-color", "#ed4c78");
+            $("#detonate-submit").html("Filters Detonated");
+            $('#detonate-submit').prop('disabled', true);
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#detonate-submit").offset().top
+            }, 1000);
+        }
+        else {
+            myDetonateDropzone.processQueue();
+        }
+    });
+</script>
+<script>
+    var primedFilters = [];
+    var detonatedFilters = [];
+
+    function primeFilter(filter) {
+        primedFilters.push(filter);
+        switch (filter.Filter) {
+            case "Cisco IronPort":
+                $("#ciscoIronPortStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos AV":
+                $("#sophosAVStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "McAfee AV":
+                $("#mcafeeAVStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos ESA":
+                $("#sophosESAStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos PureMessage":
+                $("#sophosPureMessageStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Trustwave SEG":
+                $("#trustwaveSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Exchange Online Protection":
+                $("#eopStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Proofpoint SEG":
+                $("#proofpointSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "FireEye MX":
+                $("#fireEyeMXStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "FireEye ETP Cloud":
+                $("#fireEyeETPStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Forcepoint ESG":
+                $("#forcepointESGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Trend Micro HES":
+                $("#trendMicroHESStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Symantec MessageLabs":
+                $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Mimecast SEG":
+                $("#mimecastSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Forcepoint Cloud":
+                $("#forcepointCloudStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Clearswift SEG":
+                $("#clearswiftSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Barracuda Email Security":
+                $("#barracudaESStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+            //default:
+            //    console.log("No filter found");
+            //    console.log(filter);
+        }
+    }
+
+
+    function detonateFilter(filters) {
+        detonatedFilters = filters;
+        for (var i in primedFilters) {
+            var filterResponse = false;
+            for (var x in filters) {
+                if (primedFilters[i].Filter == filters[x].Filter) {
+                    filterResponse = true;
+                    detonateFilterResponse(filters[x]);
+                }
+            }
+            if (!filterResponse) {
+                console.log("5th Function");
+                detonateFilterResponse(primedFilters[i]);
+            }
+        }
+        primedFilters = [];
+    }
+
+    function detonateFilterResponse(dFilter) {
+        console.log(dFilter);
+        switch (dFilter.Filter) {
+            case "Cisco IronPort":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#ciscoIronPortStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#ciscoIronPortStatus").addClass("pVuln");
+                }
+                else if (((dFilter.Status == "Secure") && !($("#ciscoIronPortStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#ciscoIronPortStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#ciscoIronPortView").removeClass('disabled');
+                break;
+            case "Sophos AV":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosAVStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosAVStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosAVStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosAVStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosAVView").removeClass('disabled');
+                break;
+            case "McAfee AV":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#mcafeeAVStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#mcafeeAVStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#mcafeeAVStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#mcafeeAVStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#mcafeeAVView").removeClass('disabled');
+                break;
+            case "Sophos ESA":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosESAStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosESAStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosESAStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosESAStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosESAView").removeClass('disabled');
+                break;
+            case "Sophos PureMessage":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosPureMessageStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosPureMessageStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosPureMessageStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosPureMessageStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosPureMessageView").removeClass('disabled');
+                break;
+            case "Trustwave SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#trustwaveSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#trustwaveSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#trustwaveSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#trustwaveSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#trustwaveSEGView").removeClass('disabled');
+                break;
+            case "Exchange Online Protection":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#eopStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                        $("#eopStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#eopStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#eopStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#eopView").removeClass('disabled');
+                break;
+            case "Proofpoint SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#proofpointSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#proofpointSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#proofpointSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#proofpointSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#proofpointSEGView").removeClass('disabled');
+                break;
+            case "FireEye MX":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#fireEyeMXStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#fireEyeMXStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#fireEyeMXStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#fireEyeMXStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#fireEyeMXView").removeClass('disabled');
+                break;
+            case "FireEye ETP Cloud":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#fireEyeETPStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#fireEyeETPStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#fireEyeETPStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#fireEyeETPStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#fireEyeETPView").removeClass('disabled');
+                break;
+            case "Forcepoint ESG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#forcepointESGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#forcepointESGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#forcepointESGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#forcepointESGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#forcepointESGView").removeClass('disabled');
+                break;
+            case "Trend Micro HES":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#trendMicroHESStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#trendMicroHESStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#trendMicroHESStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#trendMicroHESStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#trendMicroHESView").removeClass('disabled');
+                break;
+            case "Symantec MessageLabs":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#symantecMessageLabsStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#symantecMessageLabsStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#symantecMessageLabsView").removeClass('disabled');
+                break;
+            case "Mimecast SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#mimecastSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#mimecastSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#mimecastSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#mimecastSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#mimecastSEGView").removeClass('disabled');
+                break;
+            case "Forcepoint Cloud":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#forcepointCloudStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#forcepointCloudStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#forcepointCloudStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#forcepointCloudStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#forcepointCloudView").removeClass('disabled');
+                break;
+            case "Clearswift SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#clearswiftSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#clearswiftSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#clearswiftSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#clearswiftSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#clearswiftSEGView").removeClass('disabled');
+                break;
+            case "Barracuda Email Security":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#barracudaESStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#barracudaESStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#barracudaESStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#barracudaESStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#barracudaESView").removeClass('disabled');
+            default:
+                console.log("No filter found");
+        }
+    }
+</script>
+<script>
+    function DisplayProgressMessage(ctl, msg) {
+        $(ctl).text(msg);
+        $(ctl).submit();
+        return true;
+    }
+
+    var entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;'
+    };
+
+    function viewFilterDetail(filterName) {
+        $("#fNameDetail").text(filterName);
+        var objTo = document.getElementById('filterDetailSummary');
+        $("#filterDetailSummary").html('');
+        var filterStatus = '';
+        var filterFound = false;
+        for (var x in detonatedFilters) {
+            if (detonatedFilters[x].Filter == filterName) {
+                filterFound = true;
+                if ((filterStatus === '') || (filterStatus === "Secure")) {
+                    filterStatus = detonatedFilters[x].Status;
+                }
+                var tempStatus = "";
+                if (detonatedFilters[x].Status === "Secure") {
+                    tempStatus = "<a class='text-success'>Phish Blocked</a>";
+                }
+                else if (detonatedFilters[x].Status === "Vulnerable") {
+                    tempStatus = "<a class='text-danger'>Phish Undetected</a>";
+                }
+                var escapeString = escapeHtml(detonatedFilters[x].SurroundingText);
+                var divtest = document.createElement("div");
+                var fAnalysed = `<ul class="list-group mb-4">
+                                    <li class="list-group-item text-dark">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small>File Analysed</small>
+                                            <small>` + detonatedFilters[x].FileName + `</small>
+                                        </div>
+                                    </li>`
+                var fStatus = `<li class="list-group-item text-dark">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small>Phish Status</small>
+                                        <small>` + tempStatus + `</small>
+                                    </div>
+                                </li>`
+                var tAnalysed = "";
+                for (var t in detonatedFilters[x].TextAnalysed) {
+                    tAnalysed += `<li class="list-group-item list-group-item-light text-dark">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small style='max-width:38%'>Text Analysed: <code style='font-size:100%'>` + detonatedFilters[x].TextAnalysed[t].TextAnalysed + `</code></small>
+                                        <small style='max-width:60%'><q>` + detonatedFilters[x].TextAnalysed[t].Description + `</q></small>
+                                    </div>
+                                </li>`
+                }
+
+                var cSample = `<li class="list-group-item list-group-item-light text-dark">
+                                    <div class="card bg-dark mb-1">
+                                        <div class="card-body text-monospace font-size-1 p-6">
+                                            <div class="mb-1">
+                                                <span class="d-block text-white-70">> Header Snippet</span>
+                                                <span id="codeSnippet" class="d-block text-success font-weight-normal">
+                                                ` + escapeString.replace(/(?:\r\n|\r|\n)/g, '<br>') + `
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>`
+                divtest.innerHTML = fAnalysed + fStatus + tAnalysed + cSample;
+                objTo.appendChild(divtest);
+            }
+        }
+        if (filterStatus === "Success") {
+            $("#statusDetail").removeClass("text-danger");
+            $("#statusDetail").addClass("text-success");
+            $("#statusDetail").text("Phish Blocked");
+        }
+        else if (filterStatus === "Vulnerable") {
+            $("#statusDetail").removeClass("text-success");
+            $("#statusDetail").addClass("text-danger");
+            $("#statusDetail").text("Phish Undetected");
+        }
+        else {
+            $("#statusDetail").removeClass("text-danger");
+            $("#statusDetail").addClass("text-success");
+            $("#statusDetail").text("Phish Blocked");
+        }
+        if (!filterFound) {
+            $("#filterDetailSummary").html('<span>No filter response was detected. The filter has almost certainly detected any phishing material delivered.</span>');
+        }
+    }
+    function escapeHtml(string) {
+        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+            return entityMap[s];
+        });
+    }
+</script>

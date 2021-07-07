@@ -1,8 +1,274 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to Phishious";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
+<link href="../../assets/extra-libs/toastr/dist/build/toastr.min.css" rel="stylesheet">
+
+<!-- CSS Front Template -->
+<link rel="stylesheet" href="../../assets/css/theme.min.css">
+
+<!-- CSS Front Doc -->
+<link rel="stylesheet" href="../../assets/css/snippets.min.css">
+
+<div>
+    <!-- Hero Section -->
+    <div class="gradient-x-overlay-sm-indigo position-relative overflow-hidden">
+        <div class="container space-top-3 space-top-lg-4 space-bottom-2">
+            <div class="w-lg-65 text-center mx-lg-auto">
+                <div class="mb-5">
+                    <h1 class="display-4 mb-3">A world first in <br /><span class="text-primary">Secure Email Gateway</span> Evaluation.</h1>
+                    <p class="lead">Phishious is an open-sourced Secure Email Gateway evaluation toolkit designed for red-teamers. It provides the ability to see how various Secure Email Gateway technologies behave when presented with phishing material.</p>
+                </div>
+                <a class="btn btn-soft-indigo transition-3d-hover mb-1" href="https://github.com/Rices/Phishious" target="_blank">See the GitHub Project<i class="fas fa-angle-right ml-1"></i></a>
+                <small class="text-muted my-3 my-sm-0 mx-2 mx-sm-3 	d-none d-sm-inline">or</small>
+                <a class="btn btn-primary transition-3d-hover mb-1" target="_blank" href="~/Home/Phishious">Run a Phishious Scan<i class="fas fa-angle-right ml-1"></i></a>
+            </div>
+        </div>
+
+        <!-- Mockup -->
+        <div class="container space-2">
+            <div class="position-relative w-lg-75 text-center mx-lg-auto">
+                <div class="position-relative shadow-lg z-index-2 rounded-lg" data-aos="fade-up" data-aos-offset="-50">
+                    <img class="img-fluid rounded-lg" src="../../assets/phishious/Phishious-Results.PNG" alt="Image Description">
+                </div>
+
+                <figure class="max-w-15rem w-100 position-absolute top-0 right-0" data-aos="fade-up" data-aos-delay="100" data-aos-offset="-50">
+                    <div class="mt-n11 mr-n11">
+                        <img class="img-fluid" src="../../assets/svg/components/dots-1.svg" alt="Image Description">
+                    </div>
+                </figure>
+                <figure class="max-w-15rem w-100 position-absolute bottom-0 left-0" data-aos="fade-up">
+                    <div class="mb-n7 ml-n7">
+                        <img class="img-fluid" src="../../assets/svg/components/dots-1.svg" alt="Image Description">
+                    </div>
+                </figure>
+            </div>
+        </div>
+        <!-- End Mockup -->
+        <!-- SVG Background Shape -->
+        <figure class="w-35 position-absolute top-0 right-0 z-index-n1 mt-n11 mr-n11">
+            <img class="img-fluid" src="../../assets/svg/components/half-circle-1.svg" alt="Image Description">
+        </figure>
+
+        <figure class="w-25 position-absolute bottom-0 left-0 z-index-n1 mb-n11 ml-n11">
+            <img class="img-fluid" src="../../assets/svg/components/half-circle-2.svg" alt="Image Description">
+        </figure>
+        <!-- End SVG Background Shape -->
+    </div>
+    <!-- End Hero Section -->
+    <div class="w-lg-65 mx-lg-auto mb-5 mb-9">
+        <hr class="my-0">
+    </div>
+    <div class="container" data-aos="fade-up">
+        <div>
+            <div>
+                <div class="mb-8">
+                    <div class="mb-3 text-center">
+                        <h2>Why use Phishious?</h2>
+                    </div>
+                    <p>We're not joking when we say that Phishious is a world first in Secure Email Gateway evaluation. There is currently no other tool available (free or paid) that provides the ability for you as a red-teamer to scan your phish against an array of Secure Email Gateways. The closest utility is VirusTotal however this specifically focuses on Malware detection and not Spam/Phish detection.</p>
+                    <p>Through use of Phishious, you'll be able to freely test your phishing material against the world's most popular Secure Email Gateways. This is an invaluable capability as it provides you an indication of how successful your phishing campaign may be.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-aos="fade-up">
+        <div>
+            <div>
+                <div class="mb-8">
+                    <div class="mb-3 text-center">
+                        <h2>How does Phishious work?</h2>
+                    </div>
+                    <p>Phishious exploits a common misconfiguration where many organisations broadcast overly sensitive information in email bounce responses and non-delivery reports. The sensitive information typically comes in the form of <b>original untampered inbound message headers</b>.</p>
+                    <p>By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets quarantine folder or be completely blocked by the SEG. When we scale this up from 1 target to many, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.</p>
+                    <p>To better understand email bounce attacks and the resulting issues, please read the following <a href="https://www.linkedin.com/pulse/abusing-exchange-postmaster-bypass-email-spam-malware-sebastian-salla/" target="_blank">Linkedin Article</a> or watch this <a href="https://www.youtube.com/watch?v=wqRlVtRYwWQ" target="_blank">BSides Canberra presentation</a>.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" data-aos="fade-up">
+        <div>
+            <div>
+                <div class="mb-8">
+                    <div class="mb-3 text-center">
+                        <h2>How to use Phishious</h2>
+                    </div>
+                    <p>A Phishious scan is comprised of <b>four distinct phases</b>. These phases are outlined in detail below:</p>
+                    <div class="row">
+                        <div class="col-lg-7">
+
+                            <p>
+                                <b class="text-dark">Phase 1: Identification of Vulnerable Mail Receivers</b>
+                                <br />
+                                As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.
+                            </p>
+                            <p>
+                                <i>Image: The accompanying image is of a CanIPhish Supply Chain Scan which shows a vulnerable <b>'Mail Receiver Supply Chain'</b> that comprises of Symantec MessageLabs and Exchange Online Protection.</i>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-5 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/images/SupplyChainScan.PNG" target="_blank"><img src="../../assets/images/SupplyChainScan.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-lg-7">
+                            <p>
+                                <b class="text-dark">Phase 2: Filter Priming</b>
+                                <br />
+                                <span class="text-dark">Step 1.</span> Email <b>non-malicious content</b> to a non-existent address at various target domains where a bounce attack vulnerability exists and a known Secure Email Gateway (SEG) is in-use. <br /><b>Note: At this stage, only Amazon SES and Gmail have been tested for the receipt of bounce responses. Do not use Exchange Online.</b>
+                            </p>
+                            <p>
+                                <i>Image: The accompanying image is of an email (within Gmail) directed towards non-existent addresses at 15 targets. Each target was uniquely identified and selected for their differing Secure Email Gateway technologies.</i>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-3 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Priming.png" target="_blank"><img src="../../assets/Phishious/Filter-Priming.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-lg-7">
+                            <p>
+                                <span class="text-dark">Step 2.</span> Wait 180 seconds. Download all received bounce responses and then upload them to Phishious for Filter Priming. Upon Priming, you will see the status of all Secure Email Gateway technologies identified. For filter detonation (Phase 3), only these technologies will be targeted.
+                            <p>
+                                <i>Image: The accompanying images show the email bounce responses being uploaded to Phishious and then the observed result of Filter Priming.</i>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-2 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Priming-Upload.png" target="_blank"><img src="../../assets/Phishious/Filter-Priming-Upload.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                        <div class="col-lg-3 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Priming-Status.png" target="_blank"><img src="../../assets/Phishious/Filter-Priming-Status.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-lg-7">
+                            <p>
+                                <b class="text-dark">Phase 3: Filter Detonation</b>
+                                <br />
+                                <span class="text-dark">Step 1.</span> Email <b>malicious content</b> to a non-existent address at the same target domains emailed in Phase 2. <br /><b>Note: At this stage, only Amazon SES and Gmail have been tested for the receipt of bounce responses. Do not use Exchange Online.</b>
+                            </p>
+                            <p>
+                                <i>Image: The accompanying image is of an email (within Gmail) directed towards the same non-existent addresses at targeted in Phase 2. Each target was uniquely identified and selected for their differing Secure Email Gateway technologies.</i>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-3 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Detonation.png" target="_blank"><img src="../../assets/Phishious/Filter-Detonation.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-lg-7">
+                            <p>
+                                <span class="text-dark">Step 2.</span> Wait 180 seconds. Download all received bounce responses and then upload them to Phishious for Filter Detonation. Upon Detonation, you will see the status of all Secure Email Gateway technologies identified and whether the phish was blocked or remained undetected.
+                            <p>
+                                <i>Image: The accompanying images show the email bounce responses being uploaded to Phishious and then the observed result of Filter Detonation.</i>
+
+                            </p>
+                        </div>
+                        <div class="col-lg-2 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Detonation-Upload.png" target="_blank"><img src="../../assets/Phishious/Filter-Detonation-Upload.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                        <div class="col-lg-3 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Detonation-Result.png" target="_blank"><img src="../../assets/Phishious/Filter-Detonation-Result.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="col-lg-12">
+                            <p>
+                                <b class="text-dark">Phase 4: Results Analysis</b>
+                                <br />
+                                Analyse the results to determine whether your phishing material was blocked or remained undetected. Click <b>'View Detail'</b> to gain insight into what text was analysed within the Email Headers and how this impacted the overall Phishious assessment.
+                            </p>
+                            <p>
+                                <i>Image: The accompanying images show the detailed view of two seperate SEG technologies. This view shows how Phishious analysed Email Headers to provide two seperate results from a single Phishing Email.</i>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Detonation-Result-Detail.png" target="_blank"><img src="../../assets/Phishious/Filter-Detonation-Result-Detail.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                        <div class="col-lg-6 shadow-lg z-index-2 rounded-lg">
+                            <a href="../../assets/Phishious/Filter-Detonation-Result-Detail-2.png" target="_blank"><img src="../../assets/Phishious/Filter-Detonation-Result-Detail-2.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Description Section -->
+    <div class="container text-center">
+        <div class="w-lg-65 mx-lg-auto mb-5 mb-9">
+            <hr class="my-0">
+        </div>
+        <!-- End Step -->
+        <div class="row">
+            <div class="col-lg-6 mb-3 mb-lg-0">
+                <!-- Card -->
+                <article class="card h-100" data-aos="fade-up">
+                    <div class="w-sm-65 p-4">
+                        <h3>CanIPhish SaaS Platform</h3>
+                        <div class="mb-4">
+                            <p>Schedule and deliver phishing emails to train users or assist with red-team engagements.</p>
+                        </div>
+                        <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="https://caniphish.com//Public/CanIPhishSaaS" target="_blank">Get Started Now <i class="fas fa-angle-right ml-1"></i></a>
+                    </div>
+
+                    <div class="position-absolute bottom-0 right-0 w-sm-35 max-w-27rem">
+                        <img class="img-fluid" src="../assets/svg/illustrations/list-app.svg" alt="Image Description">
+                    </div>
+                </article>
+                <!-- End Card -->
+            </div>
+            <div class="col-lg-6">
+                <!-- Card -->
+                <article class="card h-100" data-aos="fade-up">
+                    <div class="w-sm-65 p-4">
+                        <h3>CanIPhish Domain Tools</h3>
+                        <div class="mb-4">
+                            <p>Discover mail sender and receiver supply chain vulnerabilities through a variety of proprietary techniques.</p>
+                        </div>
+                        <a class="btn btn-sm btn-soft-primary btn-pill transition-3d-hover" href="https://caniphish.com//Public/SupplyChain" target="_blank">Get Started Now <i class="fas fa-angle-right ml-1"></i></a>
+                    </div>
+
+                    <div class="position-absolute bottom-0 right-0 w-sm-35 max-w-27rem">
+                        <img class="img-fluid" src="../assets/svg/illustrations/support-man.svg" alt="Image Description">
+                    </div>
+                </article>
+                <!-- End Card -->
+            </div>
+        </div>
+    </div>
+    <!-- End Features Section -->
 </div>
+<script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="../../assets/vendor/aos/dist/aos.js"></script>
+
+<!-- JSFront -->
+<script src="../../assets/js/theme.min.js"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+    $(document).on('ready', function () {
+        // INITIALIZATION OF TEXT ANIMATION (TYPING)
+        // =======================================================
+        var typed = $.HSCore.components.HSTyped.init(".js-text-animation");
+
+
+        // INITIALIZATION OF AOS
+        // =======================================================
+        AOS.init({
+            duration: 650,
+            once: true
+        });
+    });
+</script>
+<!-- JS Implementing Plugins -->

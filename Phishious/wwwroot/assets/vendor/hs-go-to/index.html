@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Title -->
+		<title>Go To</title>
+
+		<!-- Required Meta Tags Always Come First -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../../favicon.ico">
+
+		<!-- Google Fonts -->
+		<!-- Font -->
+  <link rel="preload" href="../../assets/vendor/inter-font-family/Inter-Regular.woff2" as="font">
+  <link rel="preload" href="../../assets/vendor/inter-font-family/Inter-SemiBold.woff2" as="font">
+
+
+		<!-- CSS Implementing Plugins -->
+		<link rel="stylesheet" href="../../../assets/vendor/font-awesome/css/all.min.css">
+		<link rel="stylesheet" href="../../../assets/vendor/animate.css/animate.min.css">
+
+		<!-- CSS Front Template -->
+		<link rel="stylesheet" href="../../../assets/css/theme.css">
+
+		<style>
+			.hs-go-to {
+				z-index: 100;
+				width: 2.5rem;
+				height: 2.5rem;
+				background-color: #fff;
+				border: .0625rem solid #e7eaf3;
+				color: #77838f;
+				font-size: .75rem;
+				opacity: .5;
+				box-shadow: 0 .375rem 1.5rem 0 rgba(140, 152, 164, .125);
+				border-radius: .3125rem;
+				transition: .3s ease-out;
+			}
+
+			.hs-go-to-inner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="compensationBlock" style="position:fixed; top: 0; display:flex; align-items:center; width: 100%; height: 80px; color: #fff; background-color: #000; padding: 20px;">
+			Fixed Element
+		</div>
+
+		<div style="height: 50vh;"></div>
+
+		<h2>Go To</h2>
+
+		<div style="height: 50vh;"></div>
+
+		<h2 id="targetSelector">Go To 2</h2>
+
+		<div style="height: 50vh;"></div>
+
+		<h2>Go To 3</h2>
+
+		<div style="height: 400vh;"></div>
+
+		<a class="js-go-to hs-go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+		   data-hs-go-to-options='{
+		     "targetSelector": "#targetSelector",
+		     "compensationSelector": "#compensationBlock",
+		     "animationIn": "fadeInUp",
+		     "animationOut": "fadeOutDown",
+		     "duration": 800,
+		     "offsetTop": 700,
+		     "position": {
+		       "init": {
+		         "right": 15
+		       },
+		       "show": {
+		         "bottom": 15
+		       },
+		       "hide": {
+		         "bottom": -15
+		       }
+		     }
+		   }'>
+			<span class="fas fa-arrow-up hs-go-to-inner"></span>
+		</a>
+
+		<script src="../../../assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="../../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+		<script src="../../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="../../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+		<script src="./dist/hs-go-to.min.js"></script>
+
+		<script>
+			$(document).on('ready', function () {
+				$('.js-go-to').each(function () {
+					var goTo = new HSGoTo($(this)).init();
+				});
+			});
+		</script>
+	</body>
+</html>

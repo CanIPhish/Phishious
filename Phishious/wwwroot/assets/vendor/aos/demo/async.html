@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AOS - Animate on scroll library</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../dist/aos.css" />
+  </head>
+  <body>
+    <div id="aos-demo" class="aos-all"></div>
+
+    <script src="../dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: 'ease-in-out-sine'
+      });
+
+      setInterval(addItem, 300);
+
+      var itemsCounter = 1;
+      var container = document.getElementById('aos-demo');
+
+      function addItem () {
+        if (itemsCounter > 42) return;
+        var item = document.createElement('div');
+        item.classList.add('aos-item');
+        item.setAttribute('data-aos', 'fade-up');
+        item.innerHTML = '<div class="aos-item__inner"><h3>' + itemsCounter + '</h3></div>';
+        container.appendChild(item);
+        itemsCounter++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,48 +1,205 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Phishious</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Title -->
+    <title>Phishious | SEG Evaluation | Phish Analysis</title>
+
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.svg">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+    <link href="../../assets/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="../../assets/css/theme.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Phishious</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="header header-box-shadow-on-scroll header-abs-top header-bg-transparent header-show-hide"
+            data-hs-header-options='{
+              "fixMoment": 1000,
+              "fixEffect": "slide"
+            }'>
+        <div class="header-section">
+            <!-- Topbar -->
+            <!-- End Topbar -->
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Phishious - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="js-mega-menu navbar navbar-expand-lg">
+                    <!-- Logo -->
+                    <a class="navbar-brand navbar-brand" href="/Public/Index" aria-label="Front">
+                        @*<img src="../../assets/svg/logos/logo.svg" alt="Logo">*@
+                        <img src="../../assets/images/logo-name.svg" alt="Logo" style="height:60px; width:180px;">
+                    </a>
+                    <!-- End Logo -->
+                    <!-- Responsive Toggle Button -->
+                    <button type="button" class="navbar-toggler btn btn-icon btn-sm rounded-circle"
+                            aria-label="Toggle navigation"
+                            aria-expanded="false"
+                            aria-controls="navBar"
+                            data-toggle="collapse"
+                            data-target="#navBar">
+                        <span class="navbar-toggler-default">
+                            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z" />
+                            </svg>
+                        </span>
+                        <span class="navbar-toggler-toggled">
+                            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+                    <!-- Navigation -->
+                    <div id="navBar" class="collapse navbar-collapse">
+                        <div class="navbar-body header-abs-top-inner">
+                            <ul class="navbar-nav">
+                                <!-- Home -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" href="/Home/Index">Home</a>
+                                </li>
+                                <!-- End Home -->
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Phishious" ? "active" : "")" href="/Home/Phishious">Phishious Scan</a>
+                                </li>
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link " href="https://github.com/Rices/Phishious" target="_blank">GitHub Project</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Navigation -->
+                </nav>
+                <!-- End Nav -->
+            </div>
         </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+        @RenderBody()
+
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- ========== FOOTER ========== -->
+    <footer class="container text-center space-1">
+        <!-- Logo -->
+        <a class="d-inline-flex align-items-center mb-2" href="/Public/Index" aria-label="Front">
+            <img src="../../assets/images/logo-name.svg" alt="Logo" style="height:60px; width:180px;">
+        </a>
+        <!-- End Logo -->
+
+        <p class="small text-muted mb-0">© Copyright 2021. Can I Phish Pty Ltd. All rights reserved.</p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <!-- ========== END FOOTER ========== -->
+    <!-- Go to Top -->
+    <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+       data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": 15
+         },
+         "show": {
+           "bottom": 15
+         },
+         "hide": {
+           "bottom": -15
+         }
+       }
+     }'>
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- End Go to Top -->
+    <!-- JS Global Compulsory  -->
+    <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="../../assets/vendor/hs-header/dist/hs-header.min.js"></script>
+    <script src="../../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+    <script src="../../assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
+    <script src="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+    <script src="../../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
+    <script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <!-- JS Front -->
+    <script src="../../assets/js/theme.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // INITIALIZATION OF HEADER
+            // =======================================================
+            var header = new HSHeader($('#header')).init();
+
+
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-search-unfold-invoker').each(function () {
+                var searchUnfold = new HSUnfold($(this), {
+                    afterOpen: function () {
+                        $('#searchSlideDownControl').focus();
+                    }
+                }).init();
+            });
+
+
+            // INITIALIZATION OF FORM VALIDATION
+            // =======================================================
+            $('.js-validate').each(function () {
+                $.HSCore.components.HSValidation.init($(this), {
+                    rules: {
+                        confirmPassword: {
+                            equalTo: '#signupPassword'
+                        }
+                    }
+                });
+            });
+
+
+            // INITIALIZATION OF SHOW ANIMATIONS
+            // =======================================================
+            $('.js-animation-link').each(function () {
+                var showAnimation = new HSShowAnimation($(this)).init();
+            });
+
+
+            // INITIALIZATION OF GO TO
+            // =======================================================
+            $('.js-go-to').each(function () {
+                var goTo = new HSGoTo($(this)).init();
+            });
+        });</script>
+
+    <!-- IE Support -->
+    <script>if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../../assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');</script>
 </body>
 </html>
