@@ -59,15 +59,12 @@ Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on W
            <p><b>Step 1.</b> Email <b>malicious content</b> to a non-existent address at the same target domains emailed in Phase 2. <br /><i>Note: At this stage, only Amazon SES and Gmail have been tested for the receipt of bounce responses. Do not use Exchange Online.</i></p>
 <p>
                                 <i>Reference: The accompanying image is of an email (within Gmail) directed towards the same non-existent addresses at targeted in Phase 2. Each target was uniquely identified and selected for their differing Secure Email Gateway technologies.</i>
-
                             </p>
    <a href="https://caniphish.com/assets/Phishious/Filter-Detonation.png" target="_blank"><img src="https://caniphish.com/assets/Phishious/Filter-Detonation.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
   <p>
                                 <b>Step 2.</b> Wait 180 seconds. Download all received bounce responses and then upload them to Phishious for Filter Detonation. Upon Detonation, you will see the status of all Secure Email Gateway technologies identified and whether the phish was blocked or remained undetected.
                             <p>
-                                <i>Reference: The accompanying images show the email bounce responses being uploaded to Phishious and then the observed result of Filter Detonation.</i>
-
-                            </p>
+                                <i>Reference: The accompanying images show the email bounce responses being uploaded to Phishious and then the observed result of Filter Detonation.</i></p>
   <a href="https://caniphish.com/assets/Phishious/Filter-Detonation-Upload.png" target="_blank"><img src="https://caniphish.com/assets/Phishious/Filter-Detonation-Upload.png" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
   <a href="https://caniphish.com/assets/Phishious/Filter-Detonation-Result.png" target="_blank"><img src="https://user-images.githubusercontent.com/5109530/125237690-7457af80-e329-11eb-99c5-4cfe9d419f75.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
          </details>
