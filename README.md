@@ -33,9 +33,11 @@ Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on W
  <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
   <br />
-           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
-  <p><i>Reference: The accompanying image is of a CanIPhish Supply Chain Scan which shows a vulnerable <b>'Mail Receiver Supply Chain'</b> that comprises of Symantec MessageLabs and Exchange Online Protection.</i></p>
+           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a> and <a href="https://caniphish.com/User/GlobalSupplyChain" target="_blank">CanIPhish Global Historic Search</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
+  <p><i>Reference: The accompanying images are of a CanIPhish Supply Chain Scan which shows a vulnerable <b>'Mail Receiver Supply Chain'</b> and a Global Historic Search filtering for a Vulnerable Mail Receiver</i></p>
+
 <a href="https://caniphish.com/assets/images/SupplyChainScan.PNG" target="_blank"><img src="https://caniphish.com/assets/images/SupplyChainScan.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
+ <a href="https://user-images.githubusercontent.com/5109530/125622594-fd196233-83d5-45ef-b824-9fa1dead5aa4.PNG" target="_blank"><img src="https://user-images.githubusercontent.com/5109530/125622594-fd196233-83d5-45ef-b824-9fa1dead5aa4.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
          </details>
          <details>
           <summary><b>Phase 2: Filter Priming</b></summary>
