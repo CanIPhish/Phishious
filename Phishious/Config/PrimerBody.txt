@@ -1,0 +1,7 @@
+<p>Hi,</p>
+
+<p>This is an email destined for the domain postmaster as part of a domain supply chain analysis.</p>
+
+<p>Regards,</p>
+
+<p>John Doe</p>

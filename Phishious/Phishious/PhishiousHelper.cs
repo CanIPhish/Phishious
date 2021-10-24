@@ -8,7 +8,7 @@ namespace Phishious.Phishious
 {
     public class PhishiousHelper
     {
-        private List<string> FilterIdentificationWords = new List<string>(new string[] { "IronPort", "E=Sophos", "E=McAfee", "PerlMx", "Trustwave SEG", "Exchange", "Microsoft SMTP Server", "Proofpoint-Spam", "X-FireEye", "Forcepoint", "google", "X-TMASE-Result", "trendmicro", "Diagnostic information for administrators", "Proofpoint-Virus", "CrossPremisesHeaders", "SYMC-ESS-Spam", "Exchange-CrossPremises", "MS-Office365", "X-Forefront-Antispam-Report:", "Postfix", "X-VirusChecked", "X-StarScan", "FireEye ETP", "FE-ETP", "X-FE-ETP-METADATA", "Mimecast-Spam", "X-Mimecast-Impersonation-Protect", "protection.outlook.com", "X-MailControl", "X-MailControl-Inbound", "x-msw-jemd-malware", "x-msw-jemd-refid", "X-SEA-Spam", "X-Barracuda-Spam-Score" });
+        private List<string> FilterIdentificationWords = new List<string>(new string[] { "IronPort", "E=Sophos", "E=McAfee", "PerlMx", "Trustwave SEG", "Trustwave MailMarshal", "Exchange", "Microsoft SMTP Server", "Proofpoint-Spam", "X-FireEye", "Forcepoint", "google", "X-TMASE-Result", "trendmicro", "Diagnostic information for administrators", "Proofpoint-Virus", "CrossPremisesHeaders", "SYMC-ESS-Spam", "Exchange-CrossPremises", "MS-Office365", "X-Forefront-Antispam-Report:", "Postfix", "X-VirusChecked", "X-StarScan", "FireEye ETP", "FE-ETP", "X-FE-ETP-METADATA", "Mimecast-Spam", "X-Mimecast-Impersonation-Protect", "protection.outlook.com", "X-MailControl", "X-MailControl-Inbound", "x-msw-jemd-malware", "x-msw-jemd-refid", "X-SEA-Spam", "X-Barracuda-Spam-Score" });
 
         public List<PhishiousResult> FilterIdentification(string fileText, string fileName, bool detonate)
         {
@@ -152,6 +152,7 @@ namespace Phishious.Phishious
 
                             break;
                         case "Trustwave SEG":
+                        case "Trustwave MailMarshal":
                             if (detonate)
                             {
                                 parsedSupplies.Add(new PhishiousResult() { KeywordMatch = rawSupply, Filter = "Trustwave SEG", Status = "Vulnerable" });

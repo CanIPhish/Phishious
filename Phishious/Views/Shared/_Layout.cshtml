@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="shortcut icon" href="../../assets/images/favicon.png">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -71,7 +71,10 @@
                                 </li>
                                 <!-- End Home -->
                                 <li class="navbar-nav-item">
-                                    <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Phishious" ? "active" : "")" href="/Home/Phishious">Phishious Scan</a>
+                                    <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Automated" ? "active" : "")" href="/Home/Automated">Automated Scan</a>
+                                </li>
+                                <li class="navbar-nav-item">
+                                    <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Phishious" ? "active" : "")" href="/Home/Phishious">Manual Scan</a>
                                 </li>
                                 <li class="navbar-nav-item">
                                     <a class="nav-link " href="https://github.com/Rices/Phishious" target="_blank">GitHub Project</a>
@@ -101,7 +104,7 @@
         </a>
         <!-- End Logo -->
 
-        <p class="small text-muted mb-0">© Copyright 2021. Can I Phish Pty Ltd. All rights reserved.</p>
+        <p class="small text-muted mb-0">Phishious - An Open-Source Secure Email Gateway Evaluation Toolkit.</p>
     </footer>
     <!-- ========== END FOOTER ========== -->
     <!-- Go to Top -->
@@ -132,6 +135,6 @@
     <script src="../../assets/js/theme.min.js"></script>
 
     <!-- JS Plugins Init. -->
-    
+
 </body>
 </html>

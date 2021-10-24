@@ -1,0 +1,1119 @@
+﻿@model Phishious.Models.AutomatedModel
+@{
+    ViewData["Title"] = "Automated";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="../../assets/libs/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+<link href="../../assets/extra-libs/toastr/dist/build/toastr.min.css" rel="stylesheet">
+
+@*<link href="../../dist/css/style.min.css" rel="stylesheet">*@
+<div class="position-relative overflow-hidden bg-light z-index-2">
+    <!-- Features Section -->
+    <div class="container space-top-3 position-relative">
+        <figure class="position-absolute z-index-n1" style="top: -35rem; left: 55rem; width: 55rem; height: 55rem;">
+            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 260 260">
+                <circle fill="#e7eaf3" opacity=".7" cx="130" cy="130" r="130" />
+            </svg>
+        </figure>
+        <figure class="position-absolute z-index-n1" style="top: 15rem; left: 75rem; width: 20rem; height: 20rem;">
+            <img class="img-fluid" src="../../assets/svg/components/circled-stripe.svg" alt="Image Description">
+        </figure>
+        <figure class="position-absolute z-index-n1" style="bottom: 7rem; left: -20rem; width: 15rem; height: 15rem;">
+            <img class="img-fluid" src="../../assets/svg/components/dots-3.svg" alt="Image Description">
+        </figure>
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+            <span class="d-block small font-weight-bold text-cap mb-2">Has your email been flagged as malicious?</span>
+            <h2>Run an automated Phishious scan</h2>
+        </div>
+    </div>
+    <div class="container-lg" style="max-width:1260px">
+        <!-- End Title -->
+        <!-- Nav -->
+        <div class="text-center">
+            <ul class="nav nav-pills mb-7" role="tablist" style="position:relative; justify-content:center">
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-one-code-features-example1-tab" data-toggle="pill" href="#pills-one-code-features-example1" role="tab" aria-controls="pills-one-code-features-example1" aria-selected="true">Run Scan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-two-code-features-example1-tab" data-toggle="pill" href="#pills-two-code-features-example1" role="tab" aria-controls="pills-two-code-features-example1" aria-selected="false">Settings</a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Nav -->
+        <!-- Tab Content -->
+        <div class="tab-content pr-lg-4">
+            <div class="tab-pane fade" id="pills-one-code-features-example1" role="tabpanel" aria-labelledby="pills-one-code-features-example1-tab">
+                <div class="card mb-3 mb-lg-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Email Detonation</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Sender Email Address</label>
+
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" name="email" id="detonateSenderAddress" placeholder="clarice@example.com" aria-label="clarice@example.com">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Sender Display Name <i class="far fa-question-circle text-body ml-1" data-toggle="tooltip" data-placement="top" title="Display Name before the <email address> e.g. Phishious Prime <sender@@domain.com>"></i></label>
+
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="email" id="detonateSenderDisplay" placeholder="Display Name before the email e.g. Phishious Prime" aria-label="Display Name before the email e.g. Phishious Prime">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email Subject</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="email" id="detonateSubject" placeholder="Enter the email subject name" aria-label="Enter the email subject name">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email Body</label>
+                            <textarea cols="110" id="ebody" name="ebody" rows="10" data-sample="3" style="width:100%"
+                                      data-sample-short>
+                                </textarea>
+                        </div>
+                        <div class="form-group row">
+                            <div id="phishiousDropZone" class="js-dropzone dz-dropzone dz-dropzone-boxed gradient-overlay-half-primary-v4" style="padding:0px">
+                                <div class="dz-message py-3">
+                                    <figure class="max-w-10rem mx-auto mb-3">
+                                        <img class="img-fluid" src="../../assets/svg/illustrations/drag-n-drop.svg" alt="Image Description">
+                                    </figure>
+                                    <span class="d-block" style="font-size:large">Drag email attachments here</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card mb-3 mb-lg-4">
+
+                    <div class="card-header">
+                        <button id="phishious-submit" type="button" class="btn btn-block btn-danger px-5 m-2" onclick="return BeginFilterDetonation()">Detonate Filters</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-thead-bordered table-nowrap table-align-middle">
+                                <thead style="background-color:#efefef; color:black">
+                                    <tr>
+                                        <th>Email Filter</th>
+                                        <th>Status</th>
+                                        <th style="width: 5%;"></th>
+                                        <th>Email Filter</th>
+                                        <th>Status</th>
+                                        <th style="width: 5%;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Cisco IronPort</td>
+                                        <td id="ciscoIronPortStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="ciscoIronPortView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Cisco IronPort');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Sophos AV</td>
+                                        <td id="sophosAVStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="sophosAVView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos AV');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>McAfee AV</td>
+                                        <td id="mcafeeAVStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="mcafeeAVView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('McAfee AV');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Sophos ESA</td>
+                                        <td id="sophosESAStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="sophosESAView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos ESA');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sophos PureMessage</td>
+                                        <td id="sophosPureMessageStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="sophosPureMessageView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Sophos PureMessage');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Trustwave SEG</td>
+                                        <td id="trustwaveSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="trustwaveSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Trustwave SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exchange Online Protection</td>
+                                        <td id="eopStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="eopView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Exchange Online Protection');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Proofpoint SEG</td>
+                                        <td id="proofpointSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="proofpointSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Proofpoint SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>FireEye MX</td>
+                                        <td id="fireEyeMXStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="fireEyeMXView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('FireEye MX');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>FireEye ETP Cloud</td>
+                                        <td id="fireEyeETPStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="fireEyeETPView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('FireEye ETP Cloud');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Forcepoint ESG</td>
+                                        <td id="forcepointESGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="forcepointESGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Forcepoint ESG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Trend Micro HES</td>
+                                        <td id="trendMicroHESStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="trendMicroHESView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Trend Micro HES');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Symantec MessageLabs</td>
+                                        <td id="symantecMessageLabsStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="symantecMessageLabsView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Symantec MessageLabs');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Mimecast SEG</td>
+                                        <td id="mimecastSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="mimecastSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Mimecast SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Forcepoint Cloud</td>
+                                        <td id="forcepointCloudStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="forcepointCloudView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Forcepoint Cloud');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                        <td>Clearswift SEG</td>
+                                        <td id="clearswiftSEGStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="clearswiftSEGView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Clearswift SEG');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Barracuda Email Security</td>
+                                        <td id="barracudaESStatus"><span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span></td>
+                                        <td><a id="barracudaESView" class="btn btn-xs btn-white disabled" href="#" onclick="viewFilterDetail('Barracuda Email Security');" data-toggle="modal" data-target="#detailModal"><i class="fas fa-eye mr-1"></i> View detail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="pills-two-code-features-example1" role="tabpanel" aria-labelledby="pills-two-code-features-example1-tab">
+                <div class="card mb-3 mb-lg-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Target Settings</h4>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="card-body">
+
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label class="col-sm-3 col-form-label input-label">Target Domains</label>
+
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    @{
+                                        string seperatedDomains = "";
+                                        if (Model.pConfig.TargetDomains != null)
+                                        {
+                                            seperatedDomains = string.Join(",", Model.pConfig.TargetDomains);
+                                        }
+                                    }
+                                    <textarea id="targetDomainTextArea" class="form-control" placeholder="Seperate domains with a line, space or comma (e.g. wikipedia.org, bbc.com, etc.)" rows="4">@seperatedDomains</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Target Address (Local Part) <i class="far fa-question-circle text-body ml-1" data-toggle="tooltip" data-placement="top" title="The local part is everything before the @@ symbol. e.g. idontexist123 instead of idontexist123@@bbc.com."></i></label>
+
+                            <div class="col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="firstName" id="targetAddress" placeholder="Enter a non-existent local part address" aria-label="Enter a non-existent local part address" value="@Model.pConfig.TargetAddress">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+                    </div>
+                </div>
+                <div class="card mb-3 mb-lg-4">
+                    <div class="card-header">
+                        <h4 class="card-title">SMTP Server Settings</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">SMTP Hostname or IP</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SMTPHostname" type="text" class="form-control" name="email" id="smtpHostname" placeholder="Specify the SMTP Server Hostname or IP" aria-label="Specify the SMTP Server Hostname or IP">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Port (25 or 587)</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SMTPPort" type="text" class="form-control" name="email" id="smtpPort" placeholder="Specify the SMTP Server Port" aria-label="Specify the SMTP Server Port">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">SMTP Username (optional)</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SMTPUsername" type="text" class="form-control" name="email" id="smtpUsername" placeholder="Specify the SMTP Username" aria-label="Specify the SMTP Username">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">SMTP Password (optional)</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SMTPPassword" type="password" class="form-control" name="email" id="smtpPassword" placeholder="Specify the SMTP Password" aria-label="Specify the SMTP Password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 mb-lg-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Storage Scan Settings</h4>
+                        <div class="col-md-9">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gmailCheck" value="option1">
+                                <label class="form-check-label" for="gmailCheck">Gmail</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="s3Check" value="option2">
+                                <label class="form-check-label" for="s3Check">Amazon S3</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form Group -->
+                        <div id="awsSettings">
+                            <div class="row form-group">
+                                <label for="emailLabel" class="col-sm-3 col-form-label input-label">AWS Region</label>
+
+                                <div class="col-sm-9">
+                                    <input value="@Model.pConfig.AWSRegion" type="email" class="form-control" name="email" id="awsRegion" placeholder="Specify the AWS region to use" aria-label="Specify the AWS region to use e.g. us-west-2">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="emailLabel" class="col-sm-3 col-form-label input-label">S3 Bucket Name</label>
+
+                                <div class="col-sm-9">
+                                    <input value="@Model.pConfig.S3BucketName" type="text" class="form-control" name="email" id="s3BucketName" placeholder="S3 bucket to search within" aria-label="S3 bucket to search within e.g. PhishiousBucket">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="emailLabel" class="col-sm-3 col-form-label input-label">Bucket Folder Prefix (New Emails)</label>
+
+                                <div class="col-sm-9">
+                                    <input value="@Model.pConfig.S3BucketFolder" type="text" class="form-control" name="email" id="s3BucketFolder" placeholder="Folder to search within" aria-label="Folder to search within e.g. BouncedEmails/">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <label for="emailLabel" class="col-sm-3 col-form-label input-label">Bucket Folder Prefix (Old Emails)</label>
+
+                                <div class="col-sm-9">
+                                    <input value="@Model.pConfig.S3BucketFolderOld" type="text" class="form-control" name="email" id="s3BucketFolderOld" placeholder="Folder to search within" aria-label="Folder to move old emails to">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Scan Frequency (Seconds)</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.S3ScanFrequency" type="number" class="form-control" name="email" id="s3ScanFrequency" placeholder="How often should Phishious scan the bucket for new bounce responses?" aria-label="How often should Phishious scan the bucket for new bounce responses?" value="5">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Scan Complete After (Seconds)</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.S3ScanDuration" type="number" class="form-control" name="email" id="s3ScanDuration" placeholder="How long until Phishious can definitively display a result?" aria-label="How long until Phishious can definitively display a result?" value="180">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 mb-lg-4">
+                    <div class="card-header">
+                        <h4 class="card-title">Email Priming Settings</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form Group -->
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Sender Email Address</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SenderAddress" type="email" class="form-control" name="email" id="primingSenderAddress" placeholder="clarice@example.com" aria-label="clarice@example.com">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Sender Display Name <i class="far fa-question-circle text-body ml-1" data-toggle="tooltip" data-placement="top" title="Name before the email e.g. Phishious Prime <sender@@domain.com>"></i></label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SenderDisplayName" type="text" class="form-control" name="email" id="primingSenderDisplayName" placeholder="Display Name before the email e.g. Phishious Prime" aria-label="Display Name before the email e.g. Phishious Prime">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email Subject</label>
+
+                            <div class="col-sm-9">
+                                <input value="@Model.pConfig.SenderSubject" type="text" class="form-control" name="email" id="primingSenderSubject" placeholder="Enter the email subject name" aria-label="Enter the email subject name">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label for="emailLabel" class="col-sm-3 col-form-label input-label">Email Body</label>
+                            <textarea cols="110" id="ebody2" name="ebody2" rows="10" data-sample="3" style="width:100%"
+                                      data-sample-short>@Model.pEmailBody
+                                </textarea>
+                        </div>
+                        <button id="primeFiltersButton" type="button" class="btn btn-block btn-primary px-5" onclick="return BeginFilterPriming();">Prime Filters</button>
+                    </div>
+                </div>
+                <div class="card mb-3 mb-lg-4">
+                    <button id="saveSettingsButton" type="button" class="btn btn-block btn-success px-5" onclick="return SaveSettings();">Save Settings</button>
+                </div>
+            </div>
+        </div>
+        <!-- End Tab Content -->
+    </div>
+    <!-- End Features Section -->
+</div>
+<!-- Invoice Modal -->
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width:1000px">
+        <div class="modal-content">
+            <!-- Body -->
+            <div class="modal-body pt-3 pb-sm-5 px-sm-5">
+                <div class="text-center mb-5">
+                    <h3 class="mb-1" id="fNameDetail">Unspecified</h3>
+                    <span class="d-block" id="statusDetail">Unspecified</span>
+                </div>
+
+                <small class="text-cap mb-2">Summary</small>
+                <div id="filterDetailSummary" class=" m-t-20">
+                </div>
+                <hr class="my-5">
+
+                <p class="modal-footer-text">If you have any questions, please contact us at <a href="mailto:admin@caniphish.com">admin@caniphish.com</a>.</p>
+            </div>
+            <!-- End Body -->
+        </div>
+    </div>
+</div>
+<!-- End Invoice Modal -->
+<script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+
+<script src="../../assets/extra-libs/DataTables/datatables.min.js"></script>
+<script src="../../assets/libs/ckeditor/ckeditor.js"></script>
+<script src=" ../../assets/libs/ckeditor/samples/js/sample.js"></script>
+<script src="../../assets/extra-libs/toastr/dist/build/toastr.min.js"></script>
+
+<script data-sample="3">
+    var ckdE = CKEDITOR.replace('ebody', {
+        height: 300,
+        width: '100%'
+    }).config.allowedContent = true;
+</script>
+<script data-sample="3">
+
+    var ckdE2 = CKEDITOR.replace('ebody2', {
+        height: 300,
+        width: '100%'
+    }).config.allowedContent = true;
+</script>
+<script>
+    $('#zero_config').DataTable({
+        dom: 'rt'
+    });
+
+    @if (Model.pConfig.StorageType.Equals("Gmail"))
+    {
+    <text>
+    $("#gmailCheck").prop("checked", true);
+    $("#awsSettings").hide();
+    </text>
+    }
+    else
+    {
+    <text>
+    $("#s3Check").prop("checked", true);
+    $("#awsSettings").show();
+    </text>
+    }
+
+    $("#gmailCheck").click(function () {
+        if ($(this).is(":checked")) {
+            $("#awsSettings").hide();
+        } else {
+            $("#awsSettings").show();
+        }
+    });
+    $("#s3Check").click(function () {
+        if ($(this).is(":checked")) {
+            $("#awsSettings").show();
+        } else {
+            $("#awsSettings").hide();
+        }
+    });
+</script>
+<script>
+    var arr_from_json;
+
+    $.ajax({
+        url: '/Home/GetPrimedFilters',
+        type: 'post',
+        traditional: true,
+        dataType: 'text',
+        success: function (result) {
+            if (result != "No Filters Found") {
+                arr_from_json = JSON.parse(result);
+            }
+            console.log(arr_from_json);
+            for (var i in arr_from_json) {
+                PrimeFilter(arr_from_json[i]);
+            }
+        },
+        error: function (xhr, status) {
+            console.log("An error occured with grabing the primed filters status");
+        }
+    });
+</script>
+<script>
+    function SaveSettings() {
+        var targetDomains = [];
+        var tempString = $('#targetDomainTextArea').val().replace(/(?:\r\n|\r|\n)/g, ',');
+        targetDomains = tempString.split(',');
+
+        var dataPost = {
+            tDomains: targetDomains,
+            tAddress: targetAddress.value,
+            sHostname: smtpHostname.value,
+            sPort: smtpPort.value,
+            sUsername: smtpUsername.value,
+            sPassword: smtpPassword.value,
+            gmailStorage: gmailCheck.checked,
+            awsStorage: s3Check.checked,
+            aRegion: awsRegion.value,
+            sBucketName: s3BucketName.value,
+            sBucketFolder: s3BucketFolder.value,
+            sBucketFolderOld: s3BucketFolderOld.value,
+            sScanFreq: s3ScanFrequency.value,
+            sScanDuration: s3ScanDuration.value,
+            pSender: primingSenderAddress.value,
+            pSenderDisplay: primingSenderDisplayName.value,
+            pSenderSubject: primingSenderSubject.value,
+            pEmailBody: CKEDITOR.instances['ebody2'].getData()
+        };
+
+        $.ajax({
+            url: '/Home/SaveSettings',
+            type: 'post',
+            traditional: true,
+            data: dataPost,
+            dataType: 'text',
+            success: function (result) {
+                toastr.success("Your Phishious settings have been saved!", "Save Success");
+            },
+            error: function (xhr, status) {
+                toastr.error("An error occured.", "Error");
+            }
+        });
+    }
+
+    function BeginFilterPriming() {
+        var targetDomains = [];
+        var tempString = $('#targetDomainTextArea').val().replace(/(?:\r\n|\r|\n)/g, ',');
+        targetDomains = tempString.split(',');
+        DisplayProgressMessage("#phishious-submit", 'Priming Filters. Emails Sending...');
+        $("#phishious-submit").addClass("btn-secondary disabled");
+        $("#phishious-submit").removeClass('btn-danger');
+        primedFilters = [];
+        detonatedFilters = [];
+        ResetFilters();
+        $('#pills-one-code-features-example1-tab').tab('show');
+        document.getElementById("phishious-submit").scrollIntoView();
+        toastr.success("Phishious priming is underway!", "Prime Underway");
+        var dataPost = {
+            tDomains: targetDomains,
+            tAddress: targetAddress.value,
+            sHostname: smtpHostname.value,
+            sPort: smtpPort.value,
+            sUsername: smtpUsername.value,
+            sPassword: smtpPassword.value,
+            pSender: primingSenderAddress.value,
+            pSenderDisplay: primingSenderDisplayName.value,
+            pSenderSubject: primingSenderSubject.value,
+            pEmailBody: CKEDITOR.instances['ebody2'].getData()
+        };
+
+        $.ajax({
+            url: '/Home/AutoPrime',
+            type: 'post',
+            traditional: true,
+            data: dataPost,
+            dataType: 'text',
+            success: function (result) {
+                primedFilters = [];
+                detonatedFilters = [];
+                DisplayProgressMessage("#phishious-submit", 'Priming Filters. Detonate Shortly...');
+                FilterBounceScan('Prime');
+            },
+            error: function (xhr, status) {
+                $('#pills-two-code-features-example1-tab').tab('show');
+                document.getElementById("primeFiltersButton").scrollIntoView();
+                toastr.error("A priming error occured. Please check your configurations", "Error");
+                DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                $("#phishious-submit").addClass("btn-danger");
+                $("#phishious-submit").removeClass('btn-secondary disabled');
+            }
+        });
+    }
+
+    function BeginFilterDetonation() {
+        var targetDomains = [];
+        var tempString = $('#targetDomainTextArea').val().replace(/(?:\r\n|\r|\n)/g, ',');
+        targetDomains = tempString.split(',');
+        DisplayProgressMessage("#phishious-submit", 'Detonating Filters. Emails Sending...');
+        $("#phishious-submit").addClass("btn-secondary disabled");
+        $("#phishious-submit").removeClass('btn-danger');
+        detonatedFilters = [];
+        ResetFilters();
+        for (var i in primedFilters) {
+            PrimeFilter(primedFilters[i]);
+        }
+        toastr.success("Phishious detonation is underway!", "Detonation Underway");
+        var dataPost = {
+            tDomains: targetDomains,
+            tAddress: targetAddress.value,
+            sHostname: smtpHostname.value,
+            sPort: smtpPort.value,
+            sUsername: smtpUsername.value,
+            sPassword: smtpPassword.value,
+            pSender: detonateSenderAddress.value,
+            pSenderDisplay: detonateSenderDisplay.value,
+            pSenderSubject: detonateSubject.value,
+            pEmailBody: CKEDITOR.instances['ebody'].getData()
+        };
+
+        $.ajax({
+            url: '/Home/AutoDetonate',
+            type: 'post',
+            traditional: true,
+            data: dataPost,
+            dataType: 'text',
+            success: function (result) {
+                DisplayProgressMessage("#phishious-submit", 'Detonating Filters. Please hold...');
+                FilterBounceScan('Detonate');
+            },
+            error: function (xhr, status) {
+                toastr.error("A priming error occured. Please check your configurations", "Error");
+                DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                $("#phishious-submit").addClass("btn-danger");
+                $("#phishious-submit").removeClass('btn-secondary disabled');
+            }
+        });
+    }
+</script>
+<script>
+    function FilterBounceScan(scanType) {
+        var time = 0;
+        var freq = s3ScanFrequency.value * 1000;
+        var timeleft = 0;
+        var checked = false;
+
+        var interval = setInterval(function () {
+            if (time <= s3ScanDuration.value) {
+                time = time + +s3ScanFrequency.value;
+                timeleft = +s3ScanDuration.value - time;
+                if (scanType == 'Prime') {
+                    if (timeleft <= 0) {
+                        DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                        $("#phishious-submit").addClass("btn-danger");
+                        $("#phishious-submit").removeClass('btn-secondary disabled');
+
+                        var dataPost = {
+                            pFilters: JSON.stringify(primedFilters)
+                        };
+
+                        $.ajax({
+                            url: '/Home/SavePrimedStatus',
+                            type: 'post',
+                            traditional: true,
+                            data: dataPost
+                        });
+                    }
+                    else {
+                        toastr.success("Time left: " + timeleft + " Seconds", "Priming Countdown");
+                    }
+                    FilterCheckResponse('Prime');
+
+                }
+                else if (scanType == 'Detonate') {
+                    if ((timeleft <= 0) && (!checked)) {
+                        DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                        $("#phishious-submit").addClass("btn-danger");
+                        $("#phishious-submit").removeClass('btn-secondary disabled');
+                        FilterCheckResponse('Detonate');
+                        checked = true;
+                    }
+                    else if (timeleft > 0) {
+                        toastr.success("Time left: " + timeleft + " Seconds", "Detonation Countdown");
+                    }
+                }
+            }
+            else {
+                clearInterval(interval);
+            }
+        }, freq);
+    }
+</script>
+<script>
+    function FilterCheckResponse(type) {
+        var typeFlag = false;
+        if (type == 'Detonate') {
+            typeFlag = true;
+        }
+
+        var dataPost = {
+            aRegion: awsRegion.value,
+            sBucketName: s3BucketName.value,
+            sBucketFolder: s3BucketFolder.value,
+            sBucketFolderOld: s3BucketFolderOld.value,
+            sUsername: smtpUsername.value,
+            sPassword: smtpPassword.value,
+            gmailStorage: gmailCheck.checked,
+            detonate: typeFlag
+        };
+
+        $.ajax({
+            url: '/Home/GetPrimeResponse',
+            type: 'post',
+            traditional: true,
+            data: dataPost,
+            dataType: 'text',
+            success: function (result) {
+                if (result != "No Filters Found") {
+                    arr_from_json = JSON.parse(result);
+                    if (type == 'Detonate') {
+                        DetonateFilter(arr_from_json);
+                    }
+                }
+                console.log(arr_from_json);
+                for (var i in arr_from_json) {
+                    if (type == 'Prime') {
+                        PrimeFilter(arr_from_json[i]);
+                    }
+                }
+            },
+            error: function (xhr, status) {
+
+            }
+        });
+    }
+</script>
+<script>
+    var primedFilters = [];
+    var detonatedFilters = [];
+
+    function PrimeFilter(filter) {
+        primedFilters.push(filter);
+        switch (filter.Filter) {
+            case "Cisco IronPort":
+                $("#ciscoIronPortStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos AV":
+                $("#sophosAVStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "McAfee AV":
+                $("#mcafeeAVStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos ESA":
+                $("#sophosESAStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Sophos PureMessage":
+                $("#sophosPureMessageStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Trustwave SEG":
+                $("#trustwaveSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Exchange Online Protection":
+                $("#eopStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Proofpoint SEG":
+                $("#proofpointSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "FireEye MX":
+                $("#fireEyeMXStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "FireEye ETP Cloud":
+                $("#fireEyeETPStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Forcepoint ESG":
+                $("#forcepointESGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Trend Micro HES":
+                $("#trendMicroHESStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Symantec MessageLabs":
+                $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Mimecast SEG":
+                $("#mimecastSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Forcepoint Cloud":
+                $("#forcepointCloudStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Clearswift SEG":
+                $("#clearswiftSEGStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+                break;
+            case "Barracuda Email Security":
+                $("#barracudaESStatus").html('<span class="badge badge-soft-warning"><i class="fas fa-circle mr-1"></i>Primed</span>');
+        }
+    }
+
+    function ResetFilters() {
+        $("#ciscoIronPortStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#ciscoIronPortStatus").removeClass("pVuln");
+        $("#ciscoIronPortView").addClass('disabled');
+        $("#sophosAVStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#sophosAVStatus").removeClass("pVuln");
+        $("#sophosAVView").addClass('disabled');
+        $("#mcafeeAVStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#mcafeeAVStatus").removeClass("pVuln");
+        $("#mcafeeAVView").addClass('disabled');
+        $("#sophosESAStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#sophosESAStatus").removeClass("pVuln");
+        $("#sophosESAView").addClass('disabled');
+        $("#sophosPureMessageStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#sophosPureMessageStatus").removeClass("pVuln");
+        $("#sophosPureMessageView").addClass('disabled');
+        $("#trustwaveSEGStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#trustwaveSEGStatus").removeClass("pVuln");
+        $("#trustwaveSEGView").addClass('disabled');
+        $("#eopStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#eopStatus").removeClass("pVuln");
+        $("#eopView").addClass('disabled');
+        $("#proofpointSEGStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#proofpointSEGStatus").removeClass("pVuln");
+        $("#proofpointSEGView").addClass('disabled');
+        $("#fireEyeMXStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#fireEyeMXStatus").removeClass("pVuln");
+        $("#fireEyeMXView").addClass('disabled');
+        $("#fireEyeETPStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#fireEyeETPStatus").removeClass("pVuln");
+        $("#fireEyeETPView").addClass('disabled');
+        $("#forcepointESGStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#forcepointESGStatus").removeClass("pVuln");
+        $("#forcepointESGView").addClass('disabled');
+        $("#trendMicroHESStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#trendMicroHESStatus").removeClass("pVuln");
+        $("#trendMicroHESView").addClass('disabled');
+        $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#symantecMessageLabsStatus").removeClass("pVuln");
+        $("#symantecMessageLabsView").addClass('disabled');
+        $("#mimecastSEGStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#mimecastSEGStatus").removeClass("pVuln");
+        $("#mimecastSEGView").addClass('disabled');
+        $("#forcepointCloudStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#forcepointCloudStatus").removeClass("pVuln");
+        $("#forcepointCloudView").addClass('disabled');
+        $("#clearswiftSEGStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#clearswiftSEGStatus").removeClass("pVuln");
+        $("#clearswiftSEGView").addClass('disabled');
+        $("#barracudaESStatus").html('<span class="badge badge-soft-secondary"><i class="fas fa-eye-slash mr-1"></i>Not primed</span>');
+        $("#barracudaESStatus").removeClass("pVuln");
+        $("#barracudaESView").addClass('disabled');
+    }
+</script>
+<script>
+    function DisplayProgressMessage(ctl, msg) {
+        $(ctl).text(msg);
+        $(ctl).submit();
+        return true;
+    }
+</script>
+<script>
+    function DetonateFilter(filters) {
+        detonatedFilters = filters;
+        for (var i in primedFilters) {
+            var filterResponse = false;
+            for (var x in filters) {
+                if (primedFilters[i].Filter == filters[x].Filter) {
+                    filterResponse = true;
+                    DetonateFilterResponse(filters[x]);
+                }
+            }
+            if (!filterResponse) {
+                console.log("5th Function");
+                DetonateFilterResponse(primedFilters[i]);
+            }
+        }
+        primedFilters = [];
+    }
+
+    function DetonateFilterResponse(dFilter) {
+        console.log(dFilter);
+        switch (dFilter.Filter) {
+            case "Cisco IronPort":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#ciscoIronPortStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#ciscoIronPortStatus").addClass("pVuln");
+                }
+                else if (((dFilter.Status == "Secure") && !($("#ciscoIronPortStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#ciscoIronPortStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#ciscoIronPortView").removeClass('disabled');
+                break;
+            case "Sophos AV":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosAVStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosAVStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosAVStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosAVStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosAVView").removeClass('disabled');
+                break;
+            case "McAfee AV":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#mcafeeAVStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#mcafeeAVStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#mcafeeAVStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#mcafeeAVStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#mcafeeAVView").removeClass('disabled');
+                break;
+            case "Sophos ESA":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosESAStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosESAStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosESAStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosESAStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosESAView").removeClass('disabled');
+                break;
+            case "Sophos PureMessage":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#sophosPureMessageStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#sophosPureMessageStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#sophosPureMessageStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#sophosPureMessageStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#sophosPureMessageView").removeClass('disabled');
+                break;
+            case "Trustwave SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#trustwaveSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#trustwaveSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#trustwaveSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#trustwaveSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#trustwaveSEGView").removeClass('disabled');
+                break;
+            case "Exchange Online Protection":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#eopStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#eopStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#eopStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#eopStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#eopView").removeClass('disabled');
+                break;
+            case "Proofpoint SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#proofpointSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#proofpointSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#proofpointSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#proofpointSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#proofpointSEGView").removeClass('disabled');
+                break;
+            case "FireEye MX":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#fireEyeMXStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#fireEyeMXStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#fireEyeMXStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#fireEyeMXStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#fireEyeMXView").removeClass('disabled');
+                break;
+            case "FireEye ETP Cloud":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#fireEyeETPStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#fireEyeETPStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#fireEyeETPStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#fireEyeETPStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#fireEyeETPView").removeClass('disabled');
+                break;
+            case "Forcepoint ESG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#forcepointESGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#forcepointESGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#forcepointESGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#forcepointESGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#forcepointESGView").removeClass('disabled');
+                break;
+            case "Trend Micro HES":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#trendMicroHESStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#trendMicroHESStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#trendMicroHESStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#trendMicroHESStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#trendMicroHESView").removeClass('disabled');
+                break;
+            case "Symantec MessageLabs":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#symantecMessageLabsStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#symantecMessageLabsStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#symantecMessageLabsStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#symantecMessageLabsView").removeClass('disabled');
+                break;
+            case "Mimecast SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#mimecastSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#mimecastSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#mimecastSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#mimecastSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#mimecastSEGView").removeClass('disabled');
+                break;
+            case "Forcepoint Cloud":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#forcepointCloudStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#forcepointCloudStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#forcepointCloudStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#forcepointCloudStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#forcepointCloudView").removeClass('disabled');
+                break;
+            case "Clearswift SEG":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#clearswiftSEGStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#clearswiftSEGStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#clearswiftSEGStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#clearswiftSEGStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#clearswiftSEGView").removeClass('disabled');
+                break;
+            case "Barracuda Email Security":
+                if (dFilter.Status == "Vulnerable") {
+                    $("#barracudaESStatus").html('<span class="badge badge-soft-danger"><i class="fas fa-exclamation-circle mr-1"></i>Phish Undetected</span>');
+                    $("#barracudaESStatus").addClass("pVuln");
+                }
+                else if ((dFilter.Status == "Secure" && !($("#barracudaESStatus").hasClass("pVuln"))) || (dFilter.Status == "Priming")) {
+                    $("#barracudaESStatus").html('<span class="badge badge-soft-success"><i class="fas fa-check-circle mr-1"></i>Phish Blocked</span>');
+                }
+                $("#barracudaESView").removeClass('disabled');
+            default:
+                console.log("No filter found");
+        }
+    }
+
+    var entityMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;'
+    };
+
+    function viewFilterDetail(filterName) {
+        $("#fNameDetail").text(filterName);
+        var objTo = document.getElementById('filterDetailSummary');
+        $("#filterDetailSummary").html('');
+        var filterStatus = '';
+        var filterFound = false;
+        for (var x in detonatedFilters) {
+            if (detonatedFilters[x].Filter == filterName) {
+                filterFound = true;
+                if ((filterStatus === '') || (filterStatus === "Secure")) {
+                    filterStatus = detonatedFilters[x].Status;
+                }
+                var tempStatus = "";
+                if (detonatedFilters[x].Status === "Secure") {
+                    tempStatus = "<a class='text-success'>Phish Blocked</a>";
+                }
+                else if (detonatedFilters[x].Status === "Vulnerable") {
+                    tempStatus = "<a class='text-danger'>Phish Undetected</a>";
+                }
+                var escapeString = escapeHtml(detonatedFilters[x].SurroundingText);
+                var divtest = document.createElement("div");
+                var fAnalysed = `<ul class="list-group mb-4">
+                                    <li class="list-group-item text-dark">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small>File Analysed</small>
+                                            <small>` + detonatedFilters[x].FileName + `</small>
+                                        </div>
+                                    </li>`
+                var fStatus = `<li class="list-group-item text-dark">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small>Phish Status</small>
+                                        <small>` + tempStatus + `</small>
+                                    </div>
+                                </li>`
+                var tAnalysed = "";
+                for (var t in detonatedFilters[x].TextAnalysed) {
+                    tAnalysed += `<li class="list-group-item list-group-item-light text-dark">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small style='max-width:38%'>Text Analysed: <code style='font-size:100%'>` + detonatedFilters[x].TextAnalysed[t].TextAnalysed + `</code></small>
+                                        <small style='max-width:60%'><q>` + detonatedFilters[x].TextAnalysed[t].Description + `</q></small>
+                                    </div>
+                                </li>`
+                }
+
+                var cSample = `<li class="list-group-item list-group-item-light text-dark">
+                                    <div class="card bg-dark mb-1">
+                                        <div class="card-body text-monospace font-size-1 p-6">
+                                            <div class="mb-1">
+                                                <span class="d-block text-white-70">> Header Snippet</span>
+                                                <span id="codeSnippet" class="d-block text-success font-weight-normal">
+                                                ` + escapeString.replace(/(?:\r\n|\r|\n)/g, '<br>') + `
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>`
+                divtest.innerHTML = fAnalysed + fStatus + tAnalysed + cSample;
+                objTo.appendChild(divtest);
+            }
+        }
+        if (filterStatus === "Success") {
+            $("#statusDetail").removeClass("text-danger");
+            $("#statusDetail").addClass("text-success");
+            $("#statusDetail").text("Phish Blocked");
+        }
+        else if (filterStatus === "Vulnerable") {
+            $("#statusDetail").removeClass("text-success");
+            $("#statusDetail").addClass("text-danger");
+            $("#statusDetail").text("Phish Undetected");
+        }
+        else {
+            $("#statusDetail").removeClass("text-danger");
+            $("#statusDetail").addClass("text-success");
+            $("#statusDetail").text("Phish Blocked");
+        }
+        if (!filterFound) {
+            $("#filterDetailSummary").html('<span>No filter response was detected. The filter has almost certainly detected any phishing material delivered.</span>');
+        }
+    }
+    function escapeHtml(string) {
+        return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+            return entityMap[s];
+        });
+    }
+</script>

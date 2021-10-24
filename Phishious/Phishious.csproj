@@ -6,13 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\favicon.svg" />
+    <None Remove="Config\PrimerBody.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\assets\images\favicon.ico" />
-    <None Include="wwwroot\assets\images\favicon.png" />
-    <None Include="wwwroot\assets\images\favicon.svg" />
+    <Content Include="Config\PrimerBody.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\assets\images\logo-name.svg" />
     <None Include="wwwroot\assets\phishious\Filter-Detonation-Result-Detail-2.PNG" />
     <None Include="wwwroot\assets\phishious\Filter-Detonation-Result-Detail.PNG" />
@@ -356,12 +359,14 @@
     <None Include="wwwroot\assets\vendor\jquery\src\var\support.js" />
     <None Include="wwwroot\assets\vendor\jquery\src\var\toString.js" />
     <None Include="wwwroot\assets\vendor\jquery\src\wrap.js" />
-    <None Include="wwwroot\favicon.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.3.16" />
+    <PackageReference Include="EAGetMail" Version="5.2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
