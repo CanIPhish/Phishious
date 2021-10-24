@@ -6,6 +6,8 @@ What is Phishious?
 
 [Phishious](https://caniphish.com/Phishious/Walkthrough) is an open-source Secure Email Gateway (SEG) evaluation toolkit designed for red-teamers developed by the team at https://caniphish.com. It provides the ability to see how various Secure Email Gateway technologies behave when presented with phishing material.
 
+[![Phihious Introduction](https://i9.ytimg.com/vi/QZ9p4f6B5Ww/mqdefault.jpg?sqp=COCu14sG&rs=AOn4CLAcJbFiAzhxjwhVaPWyYyTD8770-g)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
+
 ### 📬 Secure Email Gateways Supported
 ![image](https://user-images.githubusercontent.com/5109530/124600797-74c7f480-deaa-11eb-859d-a1126dce732f.png)
 
