@@ -19,23 +19,23 @@ Phishious exploits a common misconfiguration where many organisations broadcast 
 
 By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets junk folder or be completely blocked by the SEG. When we scale this across many targets, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.
 
-To better understand email bounce attacks and the resulting issues, please read the following [Blog Post](https://caniphish.com/phishing-resources/blog/exposing-email-filters) or watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
+To better understand email bounce attacks and the resulting issues, please read the following [Blog Post](https://caniphish.com/phishing-resources/blog/exposing-email-filters), watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ) or watch the below introduction video on youtube.
+
+[![Phishious Introduction](https://user-images.githubusercontent.com/5109530/138615411-56d9ab6b-af57-4aa3-91b5-7dc54a51b5ea.PNG)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
 
 ### 💡 Requirements
 Windows 10 Endpoint, Windows Server 2012+ or any Linux system capable of running .NET Core 5.0 (see https://dotnet.microsoft.com/download/dotnet/5.0)
 
 ### ⛏️ Setup
-Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to either use the [CanIPhish hosted Phishious Toolkit](https://caniphish.com/Phishious/Index) or to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
+Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
 
 ### 🏁 How to use Phishious (Automatic)
 Documentation is underway. Please check the GitHub project regularly for an update.
 
-[![Phishious Introduction](https://user-images.githubusercontent.com/5109530/138615411-56d9ab6b-af57-4aa3-91b5-7dc54a51b5ea.PNG)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
-
 <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
   <br />
-           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a> and <a href="https://caniphish.com/User/GlobalSupplyChain" target="_blank">CanIPhish Global Historic Search</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
+           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a> and <a href="https://caniphish.com/User/GlobalSupplyChain" target="_blank">CanIPhish Global Historic Search</a> - Requires an account on CanIPhish to access.)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
   <p><i>Reference: The accompanying images are of a CanIPhish Supply Chain Scan which shows a vulnerable <b>'Mail Receiver Supply Chain'</b> and a Global Historic Search filtering for a Vulnerable Mail Receiver</i></p>
 
 <a href="https://caniphish.com/assets/images/SupplyChainScan.PNG" target="_blank"><img src="https://caniphish.com/assets/images/SupplyChainScan.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
@@ -73,7 +73,7 @@ Documentation is underway. Please check the GitHub project regularly for an upda
  <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
   <br />
-           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a> and <a href="https://caniphish.com/User/GlobalSupplyChain" target="_blank">CanIPhish Global Historic Search</a>)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
+           <p>As Phishious is designed to abuse public infrastructure, you need to identify a variety of targets who use differing mail security technologies <i>(e.g. Target 1 uses Sophos PureMessage, Target 2 uses Cisco IronPort, etc.)</i>. Identification of Vulnerable Mail Receivers can be found through manual analysis <i>(e.g. <a href="https://caniphish.com/Public/SupplyChain" target="_blank">CanIPhish Supply Chain Analysis</a> and <a href="https://caniphish.com/User/GlobalSupplyChain" target="_blank">CanIPhish Global Historic Search</a> - Requires an account on CanIPhish to access.)</i> or programmatic means <i>(e.g. <a href="https://caniphish.zendesk.com/hc/en-us/articles/4402066795919-API-Domain-Tools-Domain-Supply-Chain-Scan" target="_blank">CanIPhish Supply Chain API</a>)</i>.</p>
   <p><i>Reference: The accompanying images are of a CanIPhish Supply Chain Scan which shows a vulnerable <b>'Mail Receiver Supply Chain'</b> and a Global Historic Search filtering for a Vulnerable Mail Receiver</i></p>
 
 <a href="https://caniphish.com/assets/images/SupplyChainScan.PNG" target="_blank"><img src="https://caniphish.com/assets/images/SupplyChainScan.PNG" class="img-fluid rounded-lg" style='height: 100%; width: 100%; object-fit: contain' /></a>
