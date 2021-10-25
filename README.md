@@ -19,7 +19,7 @@ Phishious exploits a common misconfiguration where many organisations broadcast 
 
 By feeding this information into Phishious, it can extract the relevant information and detect when an email is likely to end up in a targets junk folder or be completely blocked by the SEG. When we scale this across many targets, we're able to aggregate this information to provide a holistic view on how various SEGs behave when delivered certain phishing material.
 
-To better understand email bounce attacks and the resulting issues, please read the following [Linkedin Article](https://www.linkedin.com/pulse/abusing-exchange-postmaster-bypass-email-spam-malware-sebastian-salla/) or watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
+To better understand email bounce attacks and the resulting issues, please read the following [Blog Post](https://caniphish.com/phishing-resources/blog/exposing-email-filters) or watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
 
 [![Phihious Introduction](https://user-images.githubusercontent.com/5109530/138615411-56d9ab6b-af57-4aa3-91b5-7dc54a51b5ea.PNG)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
 
