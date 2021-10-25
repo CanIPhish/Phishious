@@ -29,7 +29,10 @@ Windows 10 Endpoint, Windows Server 2012+ or any Linux system capable of running
 ### ⛏️ Setup
 Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to either use the [CanIPhish hosted Phishious Toolkit](https://caniphish.com/Phishious/Index) or to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
 
-### 🏁 How to use Phishious
+### 🏁 How to use Phishious (Automatic)
+Documentation is underway. Please check the GitHub project regularly for an update. If using Gmail then use a throwaway Gmail address with "Less secure app access" enabled. This setting is required so Phishious can connect to your Gmail account using a username + password instead of access token. This setting can be toggled by clicking here - https://myaccount.google.com/lesssecureapps
+
+### 🏁 How to use Phishious (Manual)
  <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
   <br />
