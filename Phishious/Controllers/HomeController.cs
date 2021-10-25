@@ -251,9 +251,14 @@ namespace Phishious.Controllers
                         string allMailText = oMail.TextBody;
                         foreach (var atch in oMail.Attachments)
                         {
-                            string decodedString = Encoding.UTF8.GetString(atch.Content);
-                            List<PhishiousResult> matchedFiltersAtch = pHelper.FilterIdentification(decodedString, oMail.Subject, detonate);
-                            if (matchedFiltersAtch != null) { matchedFiltersList.AddRange(matchedFiltersAtch); }
+                            if (!atch.ContentType.Contains("image"))
+                            {
+                                string decodedString = Encoding.UTF8.GetString(atch.Content);
+                                allMailText += decodedString;
+                            }
+                            //string decodedString = Encoding.UTF8.GetString(atch.Content);
+                            //List<PhishiousResult> matchedFiltersAtch = pHelper.FilterIdentification(decodedString, oMail.Subject, detonate);
+                            //if (matchedFiltersAtch != null) { matchedFiltersList.AddRange(matchedFiltersAtch); }
                         }
                         foreach (var header in oMail.Headers)
                         {
