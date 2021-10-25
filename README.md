@@ -21,8 +21,6 @@ By feeding this information into Phishious, it can extract the relevant informat
 
 To better understand email bounce attacks and the resulting issues, please read the following [Blog Post](https://caniphish.com/phishing-resources/blog/exposing-email-filters) or watch this [BSides Canberra presentation](https://youtu.be/wqRlVtRYwWQ).
 
-[![Phihious Introduction](https://user-images.githubusercontent.com/5109530/138615411-56d9ab6b-af57-4aa3-91b5-7dc54a51b5ea.PNG)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
-
 ### 💡 Requirements
 Windows 10 Endpoint, Windows Server 2012+ or any Linux system capable of running .NET Core 5.0 (see https://dotnet.microsoft.com/download/dotnet/5.0)
 
@@ -31,6 +29,8 @@ Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on W
 
 ### 🏁 How to use Phishious (Automatic)
 Documentation is underway. Please check the GitHub project regularly for an update. If using Gmail then use a throwaway Gmail address with "Less secure app access" enabled. This setting is required so Phishious can connect to your Gmail account using a username + password instead of access token. This setting can be toggled by clicking here - https://myaccount.google.com/lesssecureapps
+
+[![Phihious Introduction](https://user-images.githubusercontent.com/5109530/138615411-56d9ab6b-af57-4aa3-91b5-7dc54a51b5ea.PNG)](https://www.youtube.com/watch?v=QZ9p4f6B5Ww)
 
 ### 🏁 How to use Phishious (Manual)
  <details>
