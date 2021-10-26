@@ -84,7 +84,7 @@
                                     <figure class="max-w-10rem mx-auto mb-3">
                                         <img class="img-fluid" src="../../assets/svg/illustrations/drag-n-drop.svg" alt="Image Description">
                                     </figure>
-                                    <span class="d-block" style="font-size:large">Drag email attachments here</span>
+                                    <span class="d-block" style="font-size:large">Drag email attachments here (Coming soon)</span>
                                 </div>
                             </div>
                         </div>
@@ -393,11 +393,12 @@
 </div>
 <!-- End Invoice Modal -->
 <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="../../assets/vendor/dropzone/dist/min/dropzone.min.js"></script>
+<script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
 
 <script src="../../assets/extra-libs/DataTables/datatables.min.js"></script>
 <script src="../../assets/libs/ckeditor/ckeditor.js"></script>
-<script src=" ../../assets/libs/ckeditor/samples/js/sample.js"></script>
+<script src="../../assets/libs/ckeditor/samples/js/sample.js"></script>
 <script src="../../assets/extra-libs/toastr/dist/build/toastr.min.js"></script>
 
 <script data-sample="3">
@@ -642,9 +643,6 @@
                 }
                 else if (scanType == 'Detonate') {
                     if ((timeleft <= 0) && (!checked)) {
-                        DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
-                        $("#phishious-submit").addClass("btn-danger");
-                        $("#phishious-submit").removeClass('btn-secondary disabled');
                         FilterCheckResponse('Detonate');
                         checked = true;
                     }
@@ -690,6 +688,11 @@
                         DetonateFilter(arr_from_json);
                     }
                 }
+                if (type == 'Detonate') {
+                    DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                    $("#phishious-submit").addClass("btn-danger");
+                    $("#phishious-submit").removeClass('btn-secondary disabled');
+                }
                 console.log(arr_from_json);
                 for (var i in arr_from_json) {
                     if (type == 'Prime') {
@@ -698,7 +701,11 @@
                 }
             },
             error: function (xhr, status) {
-
+                if (type == 'Detonate') {
+                    DisplayProgressMessage("#phishious-submit", 'Detonate Filters');
+                    $("#phishious-submit").addClass("btn-danger");
+                    $("#phishious-submit").removeClass('btn-secondary disabled');
+                }
             }
         });
     }
@@ -1116,4 +1123,77 @@
             return entityMap[s];
         });
     }
+</script>
+<script>
+    Dropzone.autoDiscover = false;
+
+    var filePreview = `<div class="dz-preview dz-file-preview">
+            <div class="dz-details" >
+                <div class="dz-filename"><span data-dz-name></span></div>
+                <div class="dz-size" data-dz-size></div>
+                <img data-dz-thumbnail />
+              </div >
+              <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+              <div class="dz-error-message"><span data-dz-errormessage></span></div>
+            </div >`;
+
+    var dropzoneOptions = {
+        dictDefaultMessage: 'Drop Here!',
+        autoProcessQueue: false,
+        parallelUploads: 1100,
+        uploadMultiple: true,
+        url: "/Home/PhishiousResult",
+        paramName: "file",
+        maxFilesize: 5, // MB
+        previewTemplate: filePreview,
+        addRemoveLinks: true,
+        init: function () {
+            this.on("successmultiple", function (file, response) {
+                console.log("successmultiple > " + file.name);
+
+                //if (response != "No Filters Found") {
+                //    arr_from_json = JSON.parse(response);
+                //}
+                //console.log(arr_from_json);
+                //for (var i in arr_from_json) {
+                //    primeFilter(arr_from_json[i]);
+                //}
+
+                //$("#detonateContainer").show();
+                //$("#analysisDiv").show();
+                //$([document.documentElement, document.body]).animate({
+                //    scrollTop: $("#step2Seperator").offset().top
+                //}, 1000);
+                //$("#phishious-submit").css("background", "#00c9a7");
+                //$("#phishious-submit").css("border-color", "#00c9a7");
+                //$("#phishious-submit").html("Filters Primed");
+                //$('#phishious-submit').prop('disabled', true);
+            });
+        }
+    };
+
+    var myDropzone = new Dropzone("div#phishiousDropZone", dropzoneOptions);
+
+    var fileString = [];
+    var fileArray = [];
+
+    myDropzone.on("addedfile", function (file) {
+        console.log('Primer file added!!!');
+        $('#phishious-submit').prop('disabled', false);
+        $("#phishious-submit").html("Prime Filters");
+        $("#phishious-submit").css("background", "#377dff");
+        $("#phishious-submit").css("border-color", "#377dff");
+        //fileArray.push(file);
+        //const reader = new FileReader();
+        //reader.onload = () => {
+        //    const fileAsBinaryString = reader.result;
+        //    console.log(fileAsBinaryString);
+        //    fileString.push(fileAsBinaryString);
+        //    // do whatever you want with the file content
+        //};
+        //reader.onabort = () => console.log('file reading was aborted');
+        //reader.onerror = () => console.log('file reading has failed');
+
+        //reader.readAsBinaryString(file);
+    });
 </script>
