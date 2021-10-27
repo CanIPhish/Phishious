@@ -46,7 +46,7 @@ Documentation is underway. Please check the GitHub project regularly for an upda
   <br />
   <p><b>Target Settings.</b> Input target domains seperated by a space, line or comma. Follow this up by inputing a non-existent address into the local part address</p>
   <p><b>SMTP Settings.</b> Input the SMTP server settings you plan on using. <i>Note: If using Gmail then use a throwaway Gmail address with "Less secure app access" enabled. This setting can be toggled by clicking here - https://myaccount.google.com/lesssecureapps Also for Gmail, the username and password are your gmail email address and password.</i></p>
- <p><b>Storage Scan Settings.</b> Input the location where the email bounce responses will land. At current, both Gmail and Amazon S3 are supported as storage destinations. For use of Amazon S3, you will likely need to setup some form of forwarding capability to forward bounce responses to this location.</p>
+ <p><b>Storage Scan Settings.</b> Input the location where the email bounce responses will land. At current, both Gmail and Amazon S3 are supported as storage destinations. For use of Amazon S3, you will likely need to setup some form of forwarding capability to forward bounce responses to this location (e.g. Amazon SES Mail Receiver with S3 as the destination).</p>
  <p><b>Email Priming Settings.</b> Input your sending email address, display name and a non-malicious subject and email body. Email priming is used to baseline normal behaviour of the respective Secure Email Gateway technologies, so we can analyse the delta from this when we deliver our malicious mail.</p>
  <p><b>Once all settings have been provided, click 'Save Settings' followed by 'Prime Filters'. Wait up to a minute for Priming to complete.</b></p>
          </details>
@@ -55,7 +55,7 @@ Documentation is underway. Please check the GitHub project regularly for an upda
   <br />
            <p>Time to email malicious content to those same targets emailed during Priming.</p>
 
-  <p><b>Step 1.</b> Input your sending email address, display name and a malicious subject and email body. Note: Support for email attachments will be added shortly.</p>
+  <p><b>Step 1.</b> Input your sending email address, display name and a malicious subject and email body.</p>
  <p><b>Step 2.</b> Click 'Detonate Filters'. Wait up to a minute for Detonation to complete.</p>
          </details>
          <details>
