@@ -124,7 +124,7 @@ namespace Phishious.Controllers
                 String SMTP_USERNAME = sUsername;
                 String SMTP_PASSWORD = sPassword;
                 String HOST = sHostname;
-                int PORT = 25;
+                int PORT = Convert.ToInt32(sPort);
                 String SUBJECT = pSenderSubject;
                 String BODY = pEmailBody;
                 foreach (string domain in tDomains)
@@ -175,7 +175,7 @@ namespace Phishious.Controllers
                 String SMTP_USERNAME = sUsername;
                 String SMTP_PASSWORD = sPassword;
                 String HOST = sHostname;
-                int PORT = 25;
+                int PORT = Convert.ToInt32(sPort);
                 String SUBJECT = pSenderSubject;
                 String BODY = pEmailBody;
 
