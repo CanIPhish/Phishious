@@ -166,7 +166,7 @@ namespace Phishious.Controllers
             }
         }
 
-        public ActionResult AutoDetonate(List<string> tDomains, string tAddress, string sHostname, string sPort, string sUsername, string sPassword, string pSender, string pSenderDisplay, string pSenderSubject, string pEmailBody)
+        public ActionResult AutoDetonate(List<string> tDomains, string tAddress, string sHostname, string sPort, string sUsername, string sPassword, string pSender, string pSenderDisplay, string pSenderSubject, string pEmailBody, List<string> attachments)
         {
             try
             {
@@ -178,10 +178,19 @@ namespace Phishious.Controllers
                 int PORT = 25;
                 String SUBJECT = pSenderSubject;
                 String BODY = pEmailBody;
+
                 foreach (string domain in tDomains)
                 {
                     String TO = tAddress + "@" + domain;
                     MailMessage message = new MailMessage();
+                    if(attachments != null)
+                    {
+                        foreach(string fileName in attachments)
+                        {
+                            string filePath = @"Config/Attachments/" + fileName;
+                            message.Attachments.Add(new System.Net.Mail.Attachment(filePath));
+                        }
+                    }
                     message.IsBodyHtml = true;
                     message.From = new System.Net.Mail.MailAddress(FROM, FROMNAME);
                     message.To.Add(new System.Net.Mail.MailAddress(TO));
@@ -352,7 +361,29 @@ namespace Phishious.Controllers
         }
 
         [HttpPost]
+        public ActionResult SaveAttachments()
+        {
+            try
+            {
+                List<string> fileNames = new List<string>();
+                foreach (IFormFile file in HttpContext.Request.Form.Files)
+                {
+                    string filePath = @"Config/Attachments/" + file.FileName;
+                    using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        file.CopyTo(fileStream);
+                    }
+                    fileNames.Add(file.FileName);
+                }
+                return Content(JsonConvert.SerializeObject(fileNames));
+            }
+            catch
+            {
+                return Content("Error");
+            }
+        }
 
+        [HttpPost]
         public ActionResult PhishiousResult()
         {
             List<PhishiousResult> matchedFiltersList = new List<PhishiousResult>();
