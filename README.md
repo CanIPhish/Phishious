@@ -1,10 +1,11 @@
 ![image](https://user-images.githubusercontent.com/5109530/124600570-33cfe000-deaa-11eb-9ccf-438189f47467.png)
-
+[![name](https://img.shields.io/badge/Maintainer-CanIPhish-informational)](https://caniphish.com)
+[![name](https://img.shields.io/badge/Framework-.NET%20Core%205.0-brightgreen)](/)
 
 What is Phishious?
 =======
 
-[Phishious](https://caniphish.com/Phishious/Walkthrough) is an open-source Secure Email Gateway (SEG) evaluation toolkit designed for red-teamers developed by the team at https://caniphish.com. It provides the ability to see how various Secure Email Gateway technologies behave when presented with phishing material.
+[Phishious](https://caniphish.com/Phishious/Walkthrough) is an open-source Secure Email Gateway (SEG) evaluation toolkit designed for red-teamers and developed by the team at https://caniphish.com. Phishious provides the ability to see how various Secure Email Gateway technologies behave when presented with phishing material.
 
 ### 📬 Secure Email Gateways Supported
 ![image](https://user-images.githubusercontent.com/5109530/124600797-74c7f480-deaa-11eb-859d-a1126dce732f.png)
