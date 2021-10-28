@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/5109530/124600570-33cfe000-deaa-11eb-9ccf-438189f47467.png)
 [![name](https://img.shields.io/badge/Maintainer-CanIPhish-informational)](https://caniphish.com)
-[![name](https://img.shields.io/badge/Framework-.NET%20Core%205.0-brightgreen)](/)
+[![name](https://img.shields.io/badge/Framework-.NET%20Core%205.0-brightgreen)](https://github.com/Rices/Phishious)
 
 What is Phishious?
 =======
