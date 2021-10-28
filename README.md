@@ -45,8 +45,10 @@ Documentation is underway. Please check the GitHub project regularly for an upda
           <summary><b>Phase 2: Phishious Settings</b></summary>
   <br />
   <p><b>Target Settings.</b> Input target domains seperated by a space, line or comma. Follow this up by inputing a non-existent address into the local part address</p>
-  <p><b>SMTP Settings.</b> Input the SMTP server settings you plan on using. <i>Note: If using Gmail then use a throwaway Gmail address with "Less secure app access" enabled. This setting can be toggled by clicking here - https://myaccount.google.com/lesssecureapps Also for Gmail, the username and password are your gmail email address and password.</i></p>
- <p><b>Storage Scan Settings.</b> Input the location where the email bounce responses will land. At current, both Gmail and Amazon S3 are supported as storage destinations. For use of Amazon S3, you will likely need to setup some form of forwarding capability to forward bounce responses to this location (e.g. Amazon SES Mail Receiver with S3 as the destination).</p>
+  <p><b>SMTP Settings.</b> Input the SMTP server settings you plan on using. <br/>
+  <i>Note: If using Gmail then use a throwaway Gmail address with "Less secure app access" enabled. This setting can be toggled by clicking here - https://myaccount.google.com/lesssecureapps. Setup a Filter so any inbound email is never sent to spam (configured under Settings Cog > See All Settings > Filters and Blocked Addresses > Create a new filter). Finally for Gmail, the username and password are your gmail email address and password.</i></p>
+ <p><b>Storage Scan Settings.</b> Input the location where the email bounce responses will land. At current, both Gmail and Amazon S3 are supported as storage destinations. </br>
+           <i>Note: For use of Amazon S3, you will likely need to setup some form of forwarding capability to forward bounce responses to this location (e.g. Amazon SES Mail Receiver with S3 as the destination).</i></p>
  <p><b>Email Priming Settings.</b> Input your sending email address, display name and a non-malicious subject and email body. Email priming is used to baseline normal behaviour of the respective Secure Email Gateway technologies, so we can analyse the delta from this when we deliver our malicious mail.</p>
  <p><b>Once all settings have been provided, click 'Save Settings' followed by 'Prime Filters'. Wait up to a minute for Priming to complete.</b></p>
          </details>
