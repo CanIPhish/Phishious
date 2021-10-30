@@ -1,6 +1,6 @@
-﻿using Amazon.S3;
+﻿using AE.Net.Mail;
+using Amazon.S3;
 using Amazon.S3.Model;
-using EAGetMail;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -127,24 +127,23 @@ namespace Phishious.Controllers
                 int PORT = Convert.ToInt32(sPort);
                 String SUBJECT = pSenderSubject;
                 String BODY = pEmailBody;
-                foreach (string domain in tDomains)
+                using (var sesSMTPClient = new System.Net.Mail.SmtpClient(HOST, PORT))
                 {
-                    String TO = tAddress + "@" + domain;
-                    MailMessage message = new MailMessage();
-                    message.IsBodyHtml = true;
-                    message.From = new System.Net.Mail.MailAddress(FROM, FROMNAME);
-                    message.To.Add(new System.Net.Mail.MailAddress(TO));
-                    message.Subject = SUBJECT;
-                    message.Body = BODY;
-
-                    using (var sesSMTPClient = new System.Net.Mail.SmtpClient(HOST, PORT))
+                    if (sPort.Equals("587") || sPort.Equals("465"))
                     {
-                        if (sPort.Equals("587") || sPort.Equals("465"))
-                        {
-                            sesSMTPClient.Credentials =
-                                new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
-                            sesSMTPClient.EnableSsl = true;
-                        }
+                        sesSMTPClient.Credentials =
+                            new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
+                        sesSMTPClient.EnableSsl = true;
+                    }
+                    foreach (string domain in tDomains)
+                    {
+                        String TO = tAddress + "@" + domain;
+                        System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                        message.IsBodyHtml = true;
+                        message.From = new System.Net.Mail.MailAddress(FROM, FROMNAME);
+                        message.To.Add(new System.Net.Mail.MailAddress(TO));
+                        message.Subject = SUBJECT;
+                        message.Body = BODY;
                         try
                         {
                             Console.WriteLine("Attempting to send email...");
@@ -178,33 +177,31 @@ namespace Phishious.Controllers
                 int PORT = Convert.ToInt32(sPort);
                 String SUBJECT = pSenderSubject;
                 String BODY = pEmailBody;
-
-                foreach (string domain in tDomains)
+                using (var sesSMTPClient = new System.Net.Mail.SmtpClient(HOST, PORT))
                 {
-                    String TO = tAddress + "@" + domain;
-                    MailMessage message = new MailMessage();
-                    if(attachments != null)
+                    if (sPort.Equals("587") || sPort.Equals("465"))
                     {
-                        foreach(string fileName in attachments)
-                        {
-                            string filePath = @"Config/Attachments/" + fileName;
-                            message.Attachments.Add(new System.Net.Mail.Attachment(filePath));
-                        }
+                        sesSMTPClient.Credentials =
+                            new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
+                        sesSMTPClient.EnableSsl = true;
                     }
-                    message.IsBodyHtml = true;
-                    message.From = new System.Net.Mail.MailAddress(FROM, FROMNAME);
-                    message.To.Add(new System.Net.Mail.MailAddress(TO));
-                    message.Subject = SUBJECT;
-                    message.Body = BODY;
-
-                    using (var sesSMTPClient = new System.Net.Mail.SmtpClient(HOST, PORT))
+                    foreach (string domain in tDomains)
                     {
-                        if (sPort.Equals("587") || sPort.Equals("465"))
+                        String TO = tAddress + "@" + domain;
+                        System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                        if(attachments != null)
                         {
-                            sesSMTPClient.Credentials =
-                                new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
-                            sesSMTPClient.EnableSsl = true;
+                            foreach(string fileName in attachments)
+                            {
+                                string filePath = @"Config/Attachments/" + fileName;
+                                message.Attachments.Add(new System.Net.Mail.Attachment(filePath));
+                            }
                         }
+                        message.IsBodyHtml = true;
+                        message.From = new System.Net.Mail.MailAddress(FROM, FROMNAME);
+                        message.To.Add(new System.Net.Mail.MailAddress(TO));
+                        message.Subject = SUBJECT;
+                        message.Body = BODY;
                         try
                         {
                             Console.WriteLine("Attempting to send email...");
@@ -242,49 +239,58 @@ namespace Phishious.Controllers
         {
             List<PhishiousResult> matchedFiltersList = new List<PhishiousResult>();
             PhishiousHelper pHelper = new PhishiousHelper();
-            if(gmailStorage)
+            if (gmailStorage)
             {
                 try
                 {
-                    MailServer oServer = new MailServer("imap.gmail.com", sUsername, sPassword, ServerProtocol.Imap4);
-                    MailClient oClient = new MailClient("TryIt");
+                    System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                    using (var imap = new ImapClient("imap.gmail.com", sUsername, sPassword, AuthMethods.Login, 993, true))
+                    {
+                        imap.SelectMailbox("INBOX");
 
-                    oServer.SSLConnection = true;
-                    oServer.Port = 993;
-                    oClient.GetMailInfosParam.GetMailInfosOptions = GetMailInfosOptionType.NewOnly;
-                    oClient.Connect(oServer);
-                    MailInfo[] infos = oClient.GetMailInfos();
-                    foreach (MailInfo info in infos)
-                    {
-                        Mail oMail = oClient.GetMail(info);
-                        string allMailText = oMail.TextBody;
-                        foreach (var atch in oMail.Attachments)
+                        // Get message count
+                        var messageCount = imap.GetMessageCount();
+
+                        if (messageCount == 0)
                         {
-                            if (!atch.ContentType.Contains("image"))
+                            return Content("No Filters Found");
+                        }
+                        var msgs = imap.GetMessages(0, (messageCount - 1), false).ToArray();
+                        foreach (AE.Net.Mail.MailMessage msg in msgs)
+                        {
+                            if (!msg.Flags.HasFlag(Flags.Deleted) && !msg.Flags.HasFlag(Flags.Seen))
                             {
-                                string decodedString = Encoding.UTF8.GetString(atch.Content);
-                                allMailText += decodedString;
+                                string allMailText = msg.Body;
+                                foreach(var aView in msg.AlternateViews)
+                                {
+                                    allMailText += aView.Body;
+                                }
+                                foreach (var atch in msg.Attachments)
+                                {
+                                    if (!atch.ContentType.Contains("image"))
+                                    {
+                                        string decodedString = Encoding.UTF8.GetString(atch.GetData());
+                                        allMailText += decodedString;
+                                    }
+                                }
+                                foreach (var header in msg.Headers)
+                                {
+                                    allMailText += header.ToString();
+                                }
+                                List<PhishiousResult> matchedFilters = pHelper.FilterIdentification(allMailText, msg.Subject, detonate);
+                                if (matchedFilters != null) { matchedFiltersList.AddRange(matchedFilters); }
+
+                                imap.DeleteMessage(msg);
                             }
-                            //string decodedString = Encoding.UTF8.GetString(atch.Content);
-                            //List<PhishiousResult> matchedFiltersAtch = pHelper.FilterIdentification(decodedString, oMail.Subject, detonate);
-                            //if (matchedFiltersAtch != null) { matchedFiltersList.AddRange(matchedFiltersAtch); }
                         }
-                        foreach (var header in oMail.Headers)
+                        if (matchedFiltersList.Count == 0)
                         {
-                            allMailText += header.ToString();
+                            return Content("No Filters Found");
                         }
-                        List<PhishiousResult> matchedFilters = pHelper.FilterIdentification(allMailText, oMail.Subject, detonate);
-                        if (matchedFilters != null) { matchedFiltersList.AddRange(matchedFilters); }
-                        oClient.Delete(info);
-                    }
-                    oClient.Close();
-                    if (matchedFiltersList.Count == 0)
-                    {
-                        return Content("No Filters Found");
-                    }
-                    else
-                    {
-                        return Content(JsonConvert.SerializeObject(matchedFiltersList));
+                        else
+                        {
+                            return Content(JsonConvert.SerializeObject(matchedFiltersList));
+                        }
                     }
                 }
                 catch (Exception e)
