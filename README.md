@@ -31,7 +31,7 @@ Windows 10 Endpoint, Windows Server 2012+ or any Linux system capable of running
 Phishious is a .NET Core 5.0 MVC Web Application. Accordingly it can be run on Windows using IIS or Linux using Apache as the Web Server. However the simplest way to use Phishious is to clone the project and then Debug it using your favourite IDE (e.g. Visual Studio, Visual Studio Code, Rider, etc.).
 
 ### 🏁 How to use Phishious (Automatic)
-Documentation is underway. Please check the GitHub project regularly for an update. The automated scan adds an orchestration layer whereby Phishious automatically sends emails, ingests bounce responses and analyses mail headers with only a few clicks from you as the user. The main exercise on you as the user is to identify vulnerable mail receivers.
+The automated scan adds an orchestration layer whereby Phishious automatically sends emails, ingests bounce responses and analyses mail headers with only a few clicks. The main exercise on you as the user is to identify vulnerable mail receivers.
 
 <details>
           <summary><b>Phase 1: Identification of Vulnerable Mail Receivers</b></summary>
