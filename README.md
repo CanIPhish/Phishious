@@ -139,7 +139,7 @@ The automated scan adds an orchestration layer whereby Phishious automatically s
 
 ### 📜 Documentation
 
-Documentation is always a work-in-progress and can be found on the [CanIPhish](https://caniphish.com/Phishious/Walkthrough) website or here on GitHub. Find something missing? Let us know by filing an issue! Interested in seeing how phishing emails look and feel? Take a look at our [interactive phishing email simulator](https://caniphish.com/email-phishing-simulation-tool).
+Documentation is always a work-in-progress and can be found on the [CanIPhish](https://caniphish.com/Phishious/Walkthrough) website or here on GitHub. Find something missing? Let us know by filing an issue! Interested in seeing how phishing emails look and feel? Take a look at our [interactive phishing email simulator](https://caniphish.com/email-phishing-simulator).
 
 
 ### ❕ Issues
